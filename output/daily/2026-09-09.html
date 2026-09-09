@@ -1,0 +1,593 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GitHub 宝藏雷达 · 2026-09-09</title>
+<style>
+  :root{
+    --bg:#0d1117; --panel:#161b22; --border:#30363d; --text:#e6edf3;
+    --muted:#8b949e; --link:#58a6ff; --hot:#f85149; --high:#d29922; --watch:#3fb950;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--text);
+       font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Microsoft YaHei",sans-serif;}
+  .wrap{max-width:1080px;margin:0 auto;padding:28px 20px 60px;}
+  header h1{font-size:26px;margin:0 0 6px;}
+  .sub{color:var(--muted);font-size:13px;margin-bottom:18px;}
+  .kpis{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:20px;}
+  .kpi{background:var(--panel);border:1px solid var(--border);border-radius:10px;
+       padding:10px 16px;min-width:120px;}
+  .kpi b{display:block;font-size:20px;}
+  .kpi span{color:var(--muted);font-size:12px;}
+  .tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px;}
+  .tab{background:var(--panel);border:1px solid var(--border);color:var(--muted);
+       border-radius:999px;padding:6px 14px;cursor:pointer;font-size:13px;}
+  .tab.active{color:var(--text);border-color:var(--link);background:#1f6feb22;}
+  .section{display:none;}
+  .section.active{display:block;}
+  .card{background:var(--panel);border:1px solid var(--border);border-radius:12px;
+        padding:14px 16px;margin-bottom:12px;display:flex;gap:16px;align-items:flex-start;}
+  .card .main{flex:1;min-width:0;}
+  .rank{color:var(--muted);font-size:13px;width:26px;flex:none;padding-top:2px;}
+  .title{font-size:16px;font-weight:600;}
+  .title a{color:var(--link);text-decoration:none;}
+  .title a:hover{text-decoration:underline;}
+  .desc{color:var(--muted);font-size:13px;margin:6px 0 8px;line-height:1.5;}
+  .meta{font-size:12px;color:var(--muted);line-height:1.9;}
+  .meta code{background:#6e768133;padding:1px 5px;border-radius:4px;}
+  .badge{display:inline-block;font-size:11px;padding:2px 8px;border-radius:999px;margin-left:8px;
+         border:1px solid var(--border);}
+  .tier-explosive{background:#f8514922;color:var(--hot);border-color:#f8514955;}
+  .tier-high{background:#d2992222;color:var(--high);border-color:#d2992255;}
+  .tier-watch{background:#3fb95022;color:var(--watch);border-color:#3fb95055;}
+  .score{flex:none;text-align:center;min-width:64px;}
+  .score b{display:block;font-size:22px;}
+  .score span{font-size:11px;color:var(--muted);}
+  .spark{display:block;margin-top:6px;opacity:.9;}
+  .llm{font-size:13px;line-height:1.6;margin:6px 0;}
+  .llm b{color:var(--text);}
+  .flags{font-size:12px;color:var(--high);margin-top:4px;}
+  .empty{color:var(--muted);padding:16px;border:1px dashed var(--border);border-radius:10px;}
+  footer{color:var(--muted);font-size:12px;margin-top:26px;text-align:center;}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1>🔭 GitHub 宝藏雷达 · 2026-09-09</h1>
+    <div class="sub">早（比 Trending 早 3–14 天）· 真（反刷星 + 换皮去重）· 准（T+30 回测校准）· 垂直（财经频道做深）</div>
+  </header>
+
+  <div class="kpis">
+    <div class="kpi"><b>23</b><span>扫描候选</span></div>
+    <div class="kpi"><b>23</b><span>增速核验</span></div>
+    <div class="kpi"><b>0</b><span>深度画像</span></div>
+    <div class="kpi"><b>22</b><span>今日入选</span></div>
+  </div>
+
+  <div class="tabs">
+    <div class="tab active" data-target="sec-finance">💰 财经交易 Quant &amp; Trading (5)</div>
+    <div class="tab" data-target="sec-ai">🤖 AI / Agent 前线 (9)</div>
+    <div class="tab" data-target="sec-rising">🚀 新星榜 Rising Stars (4)</div>
+    <div class="tab" data-target="sec-tech">📰 科技资讯 Tech Radar (1)</div>
+    <div class="tab" data-target="sec-security">🛡️ 安全 &amp; 逆向 (0)</div>
+    <div class="tab" data-target="sec-tools">🧰 效率工具 (3)</div>
+  </div>
+
+  <div class="section active" id="sec-finance">
+    <h2 style="font-size:19px;">💰 财经交易 Quant &amp; Trading</h2>
+    <div class="card">
+      <div class="rank">1</div>
+      <div class="main">
+        <div class="title">
+          <a href="https://github.com/acme/alpha-quant-lab" target="_blank" rel="noreferrer">acme/alpha-quant-lab</a>
+          <span class="badge tier-explosive">🔥 爆款前夜</span>
+        </div>
+          <div class="llm"><b>亮点</b>：轻量级A股量化研究框架，集成因子挖掘、回测与订单流复盘。</div>
+          <div class="llm"><b>为什么现在</b>：A股量化工具需求持续增长，项目提供轻量级一体化方案，近期星数增长快，社区关注度高。</div>
+          <div class="llm"><b>风险</b>：项目创建仅26天，功能稳定性与文档完善度待验证。</div>
+          <div class="llm"><b>同类</b>：qlib</div>
+        <div class="meta">
+          ⭐ 780 · 7 日 <code>+235</code> · 30 日 <code>+624</code>
+          · 加速度 <code>1.45x</code> · 建库 <code>26</code> 天
+          · Python
+ · 赛道 <code>量化框架与回测</code>        </div>
+        <div class="meta">信号：db</div>
+      </div>
+      <div class="score">
+        <b>100.0</b><span>宝藏分</span>
+&lt;svg class=&#34;spark&#34; viewBox=&#34;0 0 140 34&#34; width=&#34;140&#34; height=&#34;34&#34; preserveAspectRatio=&#34;none&#34; role=&#34;img&#34; aria-label=&#34;近 30 日星增速&#34;&gt;&lt;polyline points=&#34;0,34 0.0,22.2 5.8,21.8 11.7,22.2 17.5,21.4 23.3,22.2 29.2,21.8 35.0,22.2 40.8,22.2 46.7,21.8 52.5,22.2 58.3,21.4 64.2,22.2 70.0,21.8 75.8,22.2 81.7,22.2 87.5,21.8 93.3,22.2 99.2,21.4 105.0,22.2 110.8,21.8 116.7,22.2 122.5,5.0 128.3,7.1 134.2,9.2 140.0,31.0 140,34&#34; fill=&#34;#4f9cf9&#34; fill-opacity=&#34;0.12&#34; stroke=&#34;none&#34;/&gt;&lt;polyline points=&#34;0.0,22.2 5.8,21.8 11.7,22.2 17.5,21.4 23.3,22.2 29.2,21.8 35.0,22.2 40.8,22.2 46.7,21.8 52.5,22.2 58.3,21.4 64.2,22.2 70.0,21.8 75.8,22.2 81.7,22.2 87.5,21.8 93.3,22.2 99.2,21.4 105.0,22.2 110.8,21.8 116.7,22.2 122.5,5.0 128.3,7.1 134.2,9.2 140.0,31.0&#34; fill=&#34;none&#34; stroke=&#34;#4f9cf9&#34; stroke-width=&#34;1.6&#34; stroke-linejoin=&#34;round&#34; stroke-linecap=&#34;round&#34;/&gt;&lt;/svg&gt;      </div>
+    </div>
+    <div class="card">
+      <div class="rank">2</div>
+      <div class="main">
+        <div class="title">
+          <a href="https://github.com/Fincept-Corporation/FinceptTerminal" target="_blank" rel="noreferrer">Fincept-Corporation/FinceptTerminal</a>
+          <span class="badge tier-explosive">🔥 爆款前夜</span>
+        </div>
+          <div class="llm"><b>亮点</b>：开源版彭博终端，C++/Qt 构建，集成 AI 与量化工具。</div>
+          <div class="llm"><b>为什么现在</b>：金融数据终端需求高，开源替代稀缺，项目增长快且功能全面。</div>
+          <div class="llm"><b>风险</b>：项目规模大，开发周期长，可能依赖外部数据源，存在法律风险。</div>
+          <div class="llm"><b>同类</b>：OpenBB Terminal</div>
+        <div class="meta">
+          ⭐ 31,249 · 7 日 <code>+359</code> · 30 日 <code>+1261</code>
+          · 加速度 <code>1.22x</code> · 建库 <code>741</code> 天
+          · C++
+ · 赛道 <code>量化框架与回测</code>        </div>
+        <div class="meta">信号：db</div>
+<div class="flags">⚠ star_farm_suspect — 7 日新增 359 星，但 30 天 commit=0、贡献者≤1</div>      </div>
+      <div class="score">
+        <b>100.0</b><span>宝藏分</span>
+&lt;svg class=&#34;spark&#34; viewBox=&#34;0 0 140 34&#34; width=&#34;140&#34; height=&#34;34&#34; preserveAspectRatio=&#34;none&#34; role=&#34;img&#34; aria-label=&#34;近 30 日星增速&#34;&gt;&lt;polyline points=&#34;0,34 0.0,25.9 4.8,20.7 9.7,23.7 14.5,20.7 19.3,21.6 24.1,22.8 29.0,25.9 33.8,26.2 38.6,26.2 43.4,22.2 48.3,27.7 53.1,20.7 57.9,15.3 62.8,18.6 67.6,21.3 72.4,23.4 77.2,25.9 82.1,24.0 86.9,20.4 91.7,21.9 96.6,26.8 101.4,27.1 106.2,28.6 111.0,25.0 115.9,27.7 120.7,9.8 125.5,5.0 130.3,14.7 135.2,25.0 140.0,31.0 140,34&#34; fill=&#34;#4f9cf9&#34; fill-opacity=&#34;0.12&#34; stroke=&#34;none&#34;/&gt;&lt;polyline points=&#34;0.0,25.9 4.8,20.7 9.7,23.7 14.5,20.7 19.3,21.6 24.1,22.8 29.0,25.9 33.8,26.2 38.6,26.2 43.4,22.2 48.3,27.7 53.1,20.7 57.9,15.3 62.8,18.6 67.6,21.3 72.4,23.4 77.2,25.9 82.1,24.0 86.9,20.4 91.7,21.9 96.6,26.8 101.4,27.1 106.2,28.6 111.0,25.0 115.9,27.7 120.7,9.8 125.5,5.0 130.3,14.7 135.2,25.0 140.0,31.0&#34; fill=&#34;none&#34; stroke=&#34;#4f9cf9&#34; stroke-width=&#34;1.6&#34; stroke-linejoin=&#34;round&#34; stroke-linecap=&#34;round&#34;/&gt;&lt;/svg&gt;      </div>
+    </div>
+    <div class="card">
+      <div class="rank">3</div>
+      <div class="main">
+        <div class="title">
+          <a href="https://github.com/microsoft/qlib" target="_blank" rel="noreferrer">microsoft/qlib</a>
+          <span class="badge tier-high">⭐ 高潜</span>
+        </div>
+          <div class="llm"><b>亮点</b>：微软开源AI量化投资平台，覆盖研究到生产全流程。</div>
+          <div class="llm"><b>为什么现在</b>：量化与AI结合持续热门，Qlib持续更新且社区活跃，近期星数增长显著。</div>
+          <div class="llm"><b>风险</b>：项目复杂度高，上手门槛较高，且量化策略有效性受市场变化影响。</div>
+          <div class="llm"><b>同类</b>：vn.py</div>
+        <div class="meta">
+          ⭐ 48,438 · 7 日 <code>+232</code> · 30 日 <code>+1251</code>
+          · 加速度 <code>0.79x</code> · 建库 <code>2217</code> 天
+          · Python
+ · 赛道 <code>量化框架与回测</code>        </div>
+        <div class="meta">信号：db</div>
+<div class="flags">⚠ star_farm_suspect — 7 日新增 232 星，但 30 天 commit=0、贡献者≤1</div>      </div>
+      <div class="score">
+        <b>83.23</b><span>宝藏分</span>
+&lt;svg class=&#34;spark&#34; viewBox=&#34;0 0 140 34&#34; width=&#34;140&#34; height=&#34;34&#34; preserveAspectRatio=&#34;none&#34; role=&#34;img&#34; aria-label=&#34;近 30 日星增速&#34;&gt;&lt;polyline points=&#34;0,34 0.0,24.6 4.8,25.4 9.7,27.1 14.5,25.4 19.3,25.9 24.1,5.0 29.0,17.7 33.8,21.3 38.6,25.8 43.4,27.3 48.3,28.4 53.1,27.6 57.9,26.7 62.8,27.1 67.6,27.4 72.4,27.3 77.2,26.9 82.1,27.4 86.9,22.0 91.7,22.4 96.6,25.4 101.4,27.4 106.2,28.2 111.0,23.9 115.9,27.6 120.7,26.1 125.5,26.7 130.3,26.3 135.2,26.3 140.0,31.0 140,34&#34; fill=&#34;#4f9cf9&#34; fill-opacity=&#34;0.12&#34; stroke=&#34;none&#34;/&gt;&lt;polyline points=&#34;0.0,24.6 4.8,25.4 9.7,27.1 14.5,25.4 19.3,25.9 24.1,5.0 29.0,17.7 33.8,21.3 38.6,25.8 43.4,27.3 48.3,28.4 53.1,27.6 57.9,26.7 62.8,27.1 67.6,27.4 72.4,27.3 77.2,26.9 82.1,27.4 86.9,22.0 91.7,22.4 96.6,25.4 101.4,27.4 106.2,28.2 111.0,23.9 115.9,27.6 120.7,26.1 125.5,26.7 130.3,26.3 135.2,26.3 140.0,31.0&#34; fill=&#34;none&#34; stroke=&#34;#4f9cf9&#34; stroke-width=&#34;1.6&#34; stroke-linejoin=&#34;round&#34; stroke-linecap=&#34;round&#34;/&gt;&lt;/svg&gt;      </div>
+    </div>
+    <div class="card">
+      <div class="rank">4</div>
+      <div class="main">
+        <div class="title">
+          <a href="https://github.com/hummingbot/hummingbot" target="_blank" rel="noreferrer">hummingbot/hummingbot</a>
+          <span class="badge tier-high">⭐ 高潜</span>
+        </div>
+          <div class="llm"><b>亮点</b>：开源高频加密交易机器人框架，支持多交易所与策略。</div>
+          <div class="llm"><b>为什么现在</b>：AI代理与加密交易结合趋势下，Hummingbot持续更新，社区活跃，适合量化交易开发者。</div>
+          <div class="llm"><b>风险</b>：加密市场波动大，监管风险高，项目复杂度高。</div>
+          <div class="llm"><b>同类</b>：Freqtrade</div>
+        <div class="meta">
+          ⭐ 19,937 · 7 日 <code>+173</code> · 30 日 <code>+581</code>
+          · 加速度 <code>1.28x</code> · 建库 <code>2717</code> 天
+          · Python
+ · 赛道 <code>量化框架与回测</code>        </div>
+        <div class="meta">信号：db</div>
+<div class="flags">⚠ star_farm_suspect — 7 日新增 173 星，但 30 天 commit=0、贡献者≤1</div>      </div>
+      <div class="score">
+        <b>81.31</b><span>宝藏分</span>
+&lt;svg class=&#34;spark&#34; viewBox=&#34;0 0 140 34&#34; width=&#34;140&#34; height=&#34;34&#34; preserveAspectRatio=&#34;none&#34; role=&#34;img&#34; aria-label=&#34;近 30 日星增速&#34;&gt;&lt;polyline points=&#34;0,34 0.0,22.3 4.8,19.0 9.7,21.0 14.5,25.0 19.3,29.0 24.1,25.7 29.0,24.3 33.8,31.0 38.6,22.3 43.4,29.7 48.3,23.7 53.1,16.3 57.9,23.7 62.8,24.3 67.6,23.7 72.4,17.0 77.2,7.0 82.1,21.7 86.9,25.7 91.7,25.7 96.6,18.3 101.4,17.7 106.2,23.7 111.0,23.7 115.9,15.7 120.7,5.0 125.5,11.0 130.3,19.0 135.2,23.7 140.0,27.0 140,34&#34; fill=&#34;#4f9cf9&#34; fill-opacity=&#34;0.12&#34; stroke=&#34;none&#34;/&gt;&lt;polyline points=&#34;0.0,22.3 4.8,19.0 9.7,21.0 14.5,25.0 19.3,29.0 24.1,25.7 29.0,24.3 33.8,31.0 38.6,22.3 43.4,29.7 48.3,23.7 53.1,16.3 57.9,23.7 62.8,24.3 67.6,23.7 72.4,17.0 77.2,7.0 82.1,21.7 86.9,25.7 91.7,25.7 96.6,18.3 101.4,17.7 106.2,23.7 111.0,23.7 115.9,15.7 120.7,5.0 125.5,11.0 130.3,19.0 135.2,23.7 140.0,27.0&#34; fill=&#34;none&#34; stroke=&#34;#4f9cf9&#34; stroke-width=&#34;1.6&#34; stroke-linejoin=&#34;round&#34; stroke-linecap=&#34;round&#34;/&gt;&lt;/svg&gt;      </div>
+    </div>
+    <div class="card">
+      <div class="rank">5</div>
+      <div class="main">
+        <div class="title">
+          <a href="https://github.com/stefan-jansen/machine-learning-for-trading" target="_blank" rel="noreferrer">stefan-jansen/machine-learning-for-trading</a>
+          <span class="badge tier-high">⭐ 高潜</span>
+        </div>
+          <div class="llm"><b>亮点</b>：ML for Trading 第三版配套代码，覆盖数据到实盘全流程。</div>
+          <div class="llm"><b>为什么现在</b>：持续更新，新增 LLM、Polars 等热点，社区活跃，适合量化学习与实践。</div>
+          <div class="llm"><b>风险</b>：代码量大，依赖多，需自行配置数据源，上手门槛较高。</div>
+          <div class="llm"><b>同类</b>：QuantConnect/Lean</div>
+        <div class="meta">
+          ⭐ 20,853 · 7 日 <code>+95</code> · 30 日 <code>+501</code>
+          · 加速度 <code>0.81x</code> · 建库 <code>3045</code> 天
+          · Jupyter Notebook
+ · 赛道 <code>量化框架与回测</code>        </div>
+        <div class="meta">信号：db</div>
+      </div>
+      <div class="score">
+        <b>72.21</b><span>宝藏分</span>
+&lt;svg class=&#34;spark&#34; viewBox=&#34;0 0 140 34&#34; width=&#34;140&#34; height=&#34;34&#34; preserveAspectRatio=&#34;none&#34; role=&#34;img&#34; aria-label=&#34;近 30 日星增速&#34;&gt;&lt;polyline points=&#34;0,34 0.0,24.5 4.8,16.1 9.7,31.0 14.5,28.2 19.3,19.9 24.1,19.9 29.0,24.5 33.8,21.7 38.6,13.4 43.4,13.4 48.3,25.4 53.1,25.4 57.9,20.8 62.8,5.0 67.6,22.6 72.4,6.9 77.2,16.1 82.1,24.5 86.9,18.9 91.7,24.5 96.6,30.1 101.4,30.1 106.2,22.6 111.0,27.3 115.9,31.0 120.7,24.5 125.5,22.6 130.3,17.1 135.2,20.8 140.0,31.0 140,34&#34; fill=&#34;#4f9cf9&#34; fill-opacity=&#34;0.12&#34; stroke=&#34;none&#34;/&gt;&lt;polyline points=&#34;0.0,24.5 4.8,16.1 9.7,31.0 14.5,28.2 19.3,19.9 24.1,19.9 29.0,24.5 33.8,21.7 38.6,13.4 43.4,13.4 48.3,25.4 53.1,25.4 57.9,20.8 62.8,5.0 67.6,22.6 72.4,6.9 77.2,16.1 82.1,24.5 86.9,18.9 91.7,24.5 96.6,30.1 101.4,30.1 106.2,22.6 111.0,27.3 115.9,31.0 120.7,24.5 125.5,22.6 130.3,17.1 135.2,20.8 140.0,31.0&#34; fill=&#34;none&#34; stroke=&#34;#4f9cf9&#34; stroke-width=&#34;1.6&#34; stroke-linejoin=&#34;round&#34; stroke-linecap=&#34;round&#34;/&gt;&lt;/svg&gt;      </div>
+    </div>
+  </div>
+  <div class="section" id="sec-ai">
+    <h2 style="font-size:19px;">🤖 AI / Agent 前线</h2>
+    <div class="card">
+      <div class="rank">1</div>
+      <div class="main">
+        <div class="title">
+          <a href="https://github.com/beta-ai/agent-harness" target="_blank" rel="noreferrer">beta-ai/agent-harness</a>
+          <span class="badge tier-explosive">🔥 爆款前夜</span>
+        </div>
+          <div class="llm"><b>亮点</b>：极简 agent 运行时，内置 MCP 工具路由与流式追踪。</div>
+          <div class="llm"><b>为什么现在</b>：MCP 生态爆发，极简运行时契合轻量集成需求，增速快，早期值得关注。</div>
+          <div class="llm"><b>风险</b>：项目极早期，API 与稳定性未验证，可能被大厂方案覆盖。</div>
+          <div class="llm"><b>同类</b>：LangChain</div>
+        <div class="meta">
+          ⭐ 320 · 7 日 <code>+85</code> · 30 日 <code>+137</code>
+          · 加速度 <code>1.15x</code> · 建库 <code>12</code> 天
+          · TypeScript
+        </div>
+        <div class="meta">信号：db</div>
+      </div>
+      <div class="score">
+        <b>100.0</b><span>宝藏分</span>
+&lt;svg class=&#34;spark&#34; viewBox=&#34;0 0 140 34&#34; width=&#34;140&#34; height=&#34;34&#34; preserveAspectRatio=&#34;none&#34; role=&#34;img&#34; aria-label=&#34;近 30 日星增速&#34;&gt;&lt;polyline points=&#34;0,34 0.0,22.7 5.8,21.6 11.7,22.7 17.5,20.6 23.3,22.7 29.2,21.6 35.0,22.7 40.8,22.7 46.7,21.6 52.5,22.7 58.3,20.6 64.2,22.7 70.0,21.6 75.8,22.7 81.7,22.7 87.5,21.6 93.3,22.7 99.2,20.6 105.0,22.7 110.8,21.6 116.7,22.7 122.5,5.0 128.3,10.2 134.2,15.4 140.0,31.0 140,34&#34; fill=&#34;#4f9cf9&#34; fill-opacity=&#34;0.12&#34; stroke=&#34;none&#34;/&gt;&lt;polyline points=&#34;0.0,22.7 5.8,21.6 11.7,22.7 17.5,20.6 23.3,22.7 29.2,21.6 35.0,22.7 40.8,22.7 46.7,21.6 52.5,22.7 58.3,20.6 64.2,22.7 70.0,21.6 75.8,22.7 81.7,22.7 87.5,21.6 93.3,22.7 99.2,20.6 105.0,22.7 110.8,21.6 116.7,22.7 122.5,5.0 128.3,10.2 134.2,15.4 140.0,31.0&#34; fill=&#34;none&#34; stroke=&#34;#4f9cf9&#34; stroke-width=&#34;1.6&#34; stroke-linejoin=&#34;round&#34; stroke-linecap=&#34;round&#34;/&gt;&lt;/svg&gt;      </div>
+    </div>
+    <div class="card">
+      <div class="rank">2</div>
+      <div class="main">
+        <div class="title">
+          <a href="https://github.com/NousResearch/hermes-agent" target="_blank" rel="noreferrer">NousResearch/hermes-agent</a>
+          <span class="badge tier-explosive">🔥 爆款前夜</span>
+        </div>
+          <div class="llm"><b>亮点</b>：Nous Research 推出的自适应成长型 AI 代理，强调个性化长期演进。</div>
+          <div class="llm"><b>为什么现在</b>：AI 代理赛道火热，Nous 实验室背景与高星数显示社区高度期待，值得跟踪。</div>
+          <div class="llm"><b>风险</b>：仓库创建时间与星数增长异常，需警惕数据造假或炒作。</div>
+          <div class="llm"><b>同类</b>：AutoGPT</div>
+        <div class="meta">
+          ⭐ 243,734 · 7 日 <code>+3635</code> · 30 日 <code>+16221</code>
+          · 加速度 <code>0.96x</code> · 建库 <code>414</code> 天
+          · Python
+        </div>
+        <div class="meta">信号：db</div>
+<div class="flags">⚠ star_farm_suspect — 7 日新增 3635 星，但 30 天 commit=0、贡献者≤1</div>      </div>
+      <div class="score">
+        <b>100.0</b><span>宝藏分</span>
+&lt;svg class=&#34;spark&#34; viewBox=&#34;0 0 140 34&#34; width=&#34;140&#34; height=&#34;34&#34; preserveAspectRatio=&#34;none&#34; role=&#34;img&#34; aria-label=&#34;近 30 日星增速&#34;&gt;&lt;polyline points=&#34;0,34 0.0,14.0 4.8,16.5 9.7,14.9 14.5,17.0 19.3,20.6 24.1,17.2 29.0,15.7 33.8,15.5 38.6,17.0 43.4,18.0 48.3,20.1 53.1,22.0 57.9,7.2 62.8,5.0 67.6,16.0 72.4,18.0 77.2,20.6 82.1,22.0 86.9,22.2 91.7,21.2 96.6,15.2 101.4,18.0 106.2,9.6 111.0,9.1 115.9,13.5 120.7,18.1 125.5,14.0 130.3,18.4 135.2,20.5 140.0,31.0 140,34&#34; fill=&#34;#4f9cf9&#34; fill-opacity=&#34;0.12&#34; stroke=&#34;none&#34;/&gt;&lt;polyline points=&#34;0.0,14.0 4.8,16.5 9.7,14.9 14.5,17.0 19.3,20.6 24.1,17.2 29.0,15.7 33.8,15.5 38.6,17.0 43.4,18.0 48.3,20.1 53.1,22.0 57.9,7.2 62.8,5.0 67.6,16.0 72.4,18.0 77.2,20.6 82.1,22.0 86.9,22.2 91.7,21.2 96.6,15.2 101.4,18.0 106.2,9.6 111.0,9.1 115.9,13.5 120.7,18.1 125.5,14.0 130.3,18.4 135.2,20.5 140.0,31.0&#34; fill=&#34;none&#34; stroke=&#34;#4f9cf9&#34; stroke-width=&#34;1.6&#34; stroke-linejoin=&#34;round&#34; stroke-linecap=&#34;round&#34;/&gt;&lt;/svg&gt;      </div>
+    </div>
+    <div class="card">
+      <div class="rank">3</div>
+      <div class="main">
+        <div class="title">
+          <a href="https://github.com/affaan-m/ECC" target="_blank" rel="noreferrer">affaan-m/ECC</a>
+          <span class="badge tier-explosive">🔥 爆款前夜</span>
+        </div>
+          <div class="llm"><b>亮点</b>：为 AI 编程助手打造的性能优化系统，支持多平台。</div>
+          <div class="llm"><b>为什么现在</b>：AI 编程助手爆发期，开发者亟需提升 agent 效率的工具，增长迅猛。</div>
+          <div class="llm"><b>风险</b>：仓库极新且星数异常高，需警惕刷星或炒作。</div>
+          <div class="llm"><b>同类</b>：Claude Code</div>
+        <div class="meta">
+          ⭐ 254,887 · 7 日 <code>+8675</code> · 30 日 <code>+16684</code>
+          · 加速度 <code>2.23x</code> · 建库 <code>234</code> 天
+          · JavaScript
+        </div>
+        <div class="meta">信号：db</div>
+<div class="flags">⚠ star_farm_suspect — 7 日新增 8675 星，但 30 天 commit=0、贡献者≤1</div>      </div>
+      <div class="score">
+        <b>100.0</b><span>宝藏分</span>
+&lt;svg class=&#34;spark&#34; viewBox=&#34;0 0 140 34&#34; width=&#34;140&#34; height=&#34;34&#34; preserveAspectRatio=&#34;none&#34; role=&#34;img&#34; aria-label=&#34;近 30 日星增速&#34;&gt;&lt;polyline points=&#34;0,34 0.0,29.8 4.8,29.2 9.7,30.0 14.5,30.8 19.3,31.0 24.1,30.1 29.0,29.6 33.8,29.4 38.6,30.2 43.4,28.6 48.3,27.7 53.1,27.1 57.9,26.6 62.8,28.3 67.6,28.7 72.4,28.5 77.2,29.3 82.1,30.1 86.9,27.8 91.7,25.2 96.6,24.0 101.4,25.3 106.2,22.4 111.0,17.8 115.9,11.4 120.7,8.7 125.5,5.0 130.3,9.6 135.2,10.4 140.0,28.4 140,34&#34; fill=&#34;#4f9cf9&#34; fill-opacity=&#34;0.12&#34; stroke=&#34;none&#34;/&gt;&lt;polyline points=&#34;0.0,29.8 4.8,29.2 9.7,30.0 14.5,30.8 19.3,31.0 24.1,30.1 29.0,29.6 33.8,29.4 38.6,30.2 43.4,28.6 48.3,27.7 53.1,27.1 57.9,26.6 62.8,28.3 67.6,28.7 72.4,28.5 77.2,29.3 82.1,30.1 86.9,27.8 91.7,25.2 96.6,24.0 101.4,25.3 106.2,22.4 111.0,17.8 115.9,11.4 120.7,8.7 125.5,5.0 130.3,9.6 135.2,10.4 140.0,28.4&#34; fill=&#34;none&#34; stroke=&#34;#4f9cf9&#34; stroke-width=&#34;1.6&#34; stroke-linejoin=&#34;round&#34; stroke-linecap=&#34;round&#34;/&gt;&lt;/svg&gt;      </div>
+    </div>
+    <div class="card">
+      <div class="rank">4</div>
+      <div class="main">
+        <div class="title">
+          <a href="https://github.com/Thysrael/Horizon" target="_blank" rel="noreferrer">Thysrael/Horizon</a>
+          <span class="badge tier-explosive">🔥 爆款前夜</span>
+        </div>
+          <div class="llm"><b>亮点</b>：AI 驱动的双语新闻雷达，每日自动生成简报。</div>
+          <div class="llm"><b>为什么现在</b>：信息过载时代，个性化 AI 新闻聚合需求增长，项目增长快且支持 MCP/飞书集成。</div>
+          <div class="llm"><b>风险</b>：创建仅 201 天，功能与成熟竞品差异待验证。</div>
+        <div class="meta">
+          ⭐ 9,309 · 7 日 <code>+172</code> · 30 日 <code>+593</code>
+          · 加速度 <code>1.24x</code> · 建库 <code>201</code> 天
+          · Python
+        </div>
+        <div class="meta">信号：db</div>
+<div class="flags">⚠ star_farm_suspect — 7 日新增 172 星，但 30 天 commit=0、贡献者≤1</div>      </div>
+      <div class="score">
+        <b>100.0</b><span>宝藏分</span>
+&lt;svg class=&#34;spark&#34; viewBox=&#34;0 0 140 34&#34; width=&#34;140&#34; height=&#34;34&#34; preserveAspectRatio=&#34;none&#34; role=&#34;img&#34; aria-label=&#34;近 30 日星增速&#34;&gt;&lt;polyline points=&#34;0,34 0.0,21.0 4.8,27.5 9.7,23.3 14.5,24.3 19.3,28.8 24.1,26.8 29.0,25.2 33.8,27.1 38.6,26.5 43.4,28.1 48.3,31.0 53.1,30.4 57.9,27.5 62.8,29.4 67.6,29.7 72.4,28.1 77.2,30.0 82.1,27.8 86.9,16.9 91.7,29.7 96.6,30.4 101.4,30.7 106.2,29.4 111.0,5.0 115.9,26.5 120.7,30.4 125.5,28.4 130.3,28.1 135.2,28.8 140.0,30.4 140,34&#34; fill=&#34;#4f9cf9&#34; fill-opacity=&#34;0.12&#34; stroke=&#34;none&#34;/&gt;&lt;polyline points=&#34;0.0,21.0 4.8,27.5 9.7,23.3 14.5,24.3 19.3,28.8 24.1,26.8 29.0,25.2 33.8,27.1 38.6,26.5 43.4,28.1 48.3,31.0 53.1,30.4 57.9,27.5 62.8,29.4 67.6,29.7 72.4,28.1 77.2,30.0 82.1,27.8 86.9,16.9 91.7,29.7 96.6,30.4 101.4,30.7 106.2,29.4 111.0,5.0 115.9,26.5 120.7,30.4 125.5,28.4 130.3,28.1 135.2,28.8 140.0,30.4&#34; fill=&#34;none&#34; stroke=&#34;#4f9cf9&#34; stroke-width=&#34;1.6&#34; stroke-linejoin=&#34;round&#34; stroke-linecap=&#34;round&#34;/&gt;&lt;/svg&gt;      </div>
+    </div>
+    <div class="card">
+      <div class="rank">5</div>
+      <div class="main">
+        <div class="title">
+          <a href="https://github.com/guillaumemeyer/watermarks-remover" target="_blank" rel="noreferrer">guillaumemeyer/watermarks-remover</a>
+          <span class="badge tier-explosive">🔥 爆款前夜</span>
+        </div>
+          <div class="llm"><b>亮点</b>：隐私优先的AI水印去除工具，29天星数破2万，增长迅猛。</div>
+          <div class="llm"><b>为什么现在</b>：AI生成内容激增，水印与反水印成为热点，项目切中创作者对内容所有权和隐私的需求。</div>
+          <div class="llm"><b>风险</b>：法律和伦理风险，去除水印可能被滥用，且技术对抗持续升级。</div>
+        <div class="meta">
+          ⭐ 21,506 · 7 日 <code>+1402</code> · 30 日 <code>+21506</code>
+          · 加速度 <code>0.28x</code> · 建库 <code>29</code> 天
+          · Python
+        </div>
+        <div class="meta">信号：db</div>
+<div class="flags">⚠ star_farm_suspect — 7 日新增 1402 星，但 30 天 commit=0、贡献者≤1</div>      </div>
+      <div class="score">
+        <b>100.0</b><span>宝藏分</span>
+&lt;svg class=&#34;spark&#34; viewBox=&#34;0 0 140 34&#34; width=&#34;140&#34; height=&#34;34&#34; preserveAspectRatio=&#34;none&#34; role=&#34;img&#34; aria-label=&#34;近 30 日星增速&#34;&gt;&lt;polyline points=&#34;0,34 0.0,31.0 4.8,5.0 9.7,7.2 14.5,8.1 19.3,19.6 24.1,12.3 29.0,18.2 33.8,23.5 38.6,24.6 43.4,25.2 48.3,26.8 53.1,27.7 57.9,27.6 62.8,27.6 67.6,28.6 72.4,29.1 77.2,28.9 82.1,29.4 86.9,29.7 91.7,29.2 96.6,29.7 101.4,29.7 106.2,29.5 111.0,29.2 115.9,29.1 120.7,29.6 125.5,29.4 130.3,29.5 135.2,30.0 140.0,30.8 140,34&#34; fill=&#34;#4f9cf9&#34; fill-opacity=&#34;0.12&#34; stroke=&#34;none&#34;/&gt;&lt;polyline points=&#34;0.0,31.0 4.8,5.0 9.7,7.2 14.5,8.1 19.3,19.6 24.1,12.3 29.0,18.2 33.8,23.5 38.6,24.6 43.4,25.2 48.3,26.8 53.1,27.7 57.9,27.6 62.8,27.6 67.6,28.6 72.4,29.1 77.2,28.9 82.1,29.4 86.9,29.7 91.7,29.2 96.6,29.7 101.4,29.7 106.2,29.5 111.0,29.2 115.9,29.1 120.7,29.6 125.5,29.4 130.3,29.5 135.2,30.0 140.0,30.8&#34; fill=&#34;none&#34; stroke=&#34;#4f9cf9&#34; stroke-width=&#34;1.6&#34; stroke-linejoin=&#34;round&#34; stroke-linecap=&#34;round&#34;/&gt;&lt;/svg&gt;      </div>
+    </div>
+    <div class="card">
+      <div class="rank">6</div>
+      <div class="main">
+        <div class="title">
+          <a href="https://github.com/n8n-io/n8n" target="_blank" rel="noreferrer">n8n-io/n8n</a>
+          <span class="badge tier-explosive">🔥 爆款前夜</span>
+        </div>
+          <div class="llm"><b>亮点</b>：开源工作流自动化平台，原生AI能力与400+集成，支持自托管。</div>
+          <div class="llm"><b>为什么现在</b>：AI自动化需求激增，n8n持续迭代，近30天增星4330，社区活跃，MCP支持紧跟趋势。</div>
+          <div class="llm"><b>风险</b>：fair-code许可非纯开源，商业竞争激烈，功能复杂度可能提升使用门槛。</div>
+          <div class="llm"><b>同类</b>：Zapier</div>
+        <div class="meta">
+          ⭐ 203,846 · 7 日 <code>+795</code> · 30 日 <code>+4330</code>
+          · 加速度 <code>0.79x</code> · 建库 <code>2636</code> 天
+          · TypeScript
+        </div>
+        <div class="meta">信号：db</div>
+<div class="flags">⚠ star_farm_suspect — 7 日新增 795 星，但 30 天 commit=0、贡献者≤1</div>      </div>
+      <div class="score">
+        <b>93.6</b><span>宝藏分</span>
+&lt;svg class=&#34;spark&#34; viewBox=&#34;0 0 140 34&#34; width=&#34;140&#34; height=&#34;34&#34; preserveAspectRatio=&#34;none&#34; role=&#34;img&#34; aria-label=&#34;近 30 日星增速&#34;&gt;&lt;polyline points=&#34;0,34 0.0,23.2 4.8,25.1 9.7,22.5 14.5,25.0 19.3,23.8 24.1,23.7 29.0,23.9 33.8,25.1 38.6,25.6 43.4,17.1 48.3,23.7 53.1,5.0 57.9,14.3 62.8,22.8 67.6,24.3 72.4,25.6 77.2,26.0 82.1,27.4 86.9,27.9 91.7,27.5 96.6,27.4 101.4,26.3 106.2,25.4 111.0,26.3 115.9,24.7 120.7,26.1 125.5,26.9 130.3,25.9 135.2,25.2 140.0,31.0 140,34&#34; fill=&#34;#4f9cf9&#34; fill-opacity=&#34;0.12&#34; stroke=&#34;none&#34;/&gt;&lt;polyline points=&#34;0.0,23.2 4.8,25.1 9.7,22.5 14.5,25.0 19.3,23.8 24.1,23.7 29.0,23.9 33.8,25.1 38.6,25.6 43.4,17.1 48.3,23.7 53.1,5.0 57.9,14.3 62.8,22.8 67.6,24.3 72.4,25.6 77.2,26.0 82.1,27.4 86.9,27.9 91.7,27.5 96.6,27.4 101.4,26.3 106.2,25.4 111.0,26.3 115.9,24.7 120.7,26.1 125.5,26.9 130.3,25.9 135.2,25.2 140.0,31.0&#34; fill=&#34;none&#34; stroke=&#34;#4f9cf9&#34; stroke-width=&#34;1.6&#34; stroke-linejoin=&#34;round&#34; stroke-linecap=&#34;round&#34;/&gt;&lt;/svg&gt;      </div>
+    </div>
+    <div class="card">
+      <div class="rank">7</div>
+      <div class="main">
+        <div class="title">
+          <a href="https://github.com/ollama/ollama" target="_blank" rel="noreferrer">ollama/ollama</a>
+          <span class="badge tier-explosive">🔥 爆款前夜</span>
+        </div>
+          <div class="llm"><b>亮点</b>：本地运行大模型的极简工具，支持主流开源模型，生态成熟。</div>
+          <div class="llm"><b>为什么现在</b>：AI 应用爆发，本地化部署需求增长，Ollama 持续更新模型支持，社区活跃。</div>
+          <div class="llm"><b>风险</b>：模型迭代快，需持续跟进；与云服务竞争，长期定位可能受冲击。</div>
+          <div class="llm"><b>同类</b>：llama.cpp</div>
+        <div class="meta">
+          ⭐ 180,513 · 7 日 <code>+604</code> · 30 日 <code>+2803</code>
+          · 加速度 <code>0.92x</code> · 建库 <code>1171</code> 天
+          · Go
+        </div>
+        <div class="meta">信号：db</div>
+<div class="flags">⚠ star_farm_suspect — 7 日新增 604 星，但 30 天 commit=0、贡献者≤1</div>      </div>
+      <div class="score">
+        <b>86.37</b><span>宝藏分</span>
+&lt;svg class=&#34;spark&#34; viewBox=&#34;0 0 140 34&#34; width=&#34;140&#34; height=&#34;34&#34; preserveAspectRatio=&#34;none&#34; role=&#34;img&#34; aria-label=&#34;近 30 日星增速&#34;&gt;&lt;polyline points=&#34;0,34 0.0,18.9 4.8,13.8 9.7,10.3 14.5,15.4 19.3,7.6 24.1,5.0 29.0,8.2 33.8,14.3 38.6,14.8 43.4,15.0 48.3,17.5 53.1,16.1 57.9,18.5 62.8,19.4 67.6,16.4 72.4,13.8 77.2,17.3 82.1,16.1 86.9,15.0 91.7,21.7 96.6,20.6 101.4,16.4 106.2,14.5 111.0,14.3 115.9,15.9 120.7,15.0 125.5,14.8 130.3,9.2 135.2,20.6 140.0,31.0 140,34&#34; fill=&#34;#4f9cf9&#34; fill-opacity=&#34;0.12&#34; stroke=&#34;none&#34;/&gt;&lt;polyline points=&#34;0.0,18.9 4.8,13.8 9.7,10.3 14.5,15.4 19.3,7.6 24.1,5.0 29.0,8.2 33.8,14.3 38.6,14.8 43.4,15.0 48.3,17.5 53.1,16.1 57.9,18.5 62.8,19.4 67.6,16.4 72.4,13.8 77.2,17.3 82.1,16.1 86.9,15.0 91.7,21.7 96.6,20.6 101.4,16.4 106.2,14.5 111.0,14.3 115.9,15.9 120.7,15.0 125.5,14.8 130.3,9.2 135.2,20.6 140.0,31.0&#34; fill=&#34;none&#34; stroke=&#34;#4f9cf9&#34; stroke-width=&#34;1.6&#34; stroke-linejoin=&#34;round&#34; stroke-linecap=&#34;round&#34;/&gt;&lt;/svg&gt;      </div>
+    </div>
+    <div class="card">
+      <div class="rank">8</div>
+      <div class="main">
+        <div class="title">
+          <a href="https://github.com/koala73/worldmonitor" target="_blank" rel="noreferrer">koala73/worldmonitor</a>
+          <span class="badge tier-high">⭐ 高潜</span>
+        </div>
+          <div class="llm"><b>亮点</b>：AI驱动的实时全球情报仪表盘，整合新闻、地缘政治与基础设施监控。</div>
+          <div class="llm"><b>为什么现在</b>：地缘政治风险升温，OSINT与AI结合需求增长，项目增长迅猛且具MCP生态潜力。</div>
+          <div class="llm"><b>风险</b>：数据源合规与准确性存疑，且高星数可能含水分或炒作。</div>
+          <div class="llm"><b>同类</b>：Palantir Foundry</div>
+        <div class="meta">
+          ⭐ 85,899 · 7 日 <code>+530</code> · 30 日 <code>+5607</code>
+          · 加速度 <code>0.41x</code> · 建库 <code>244</code> 天
+          · TypeScript
+        </div>
+        <div class="meta">信号：db</div>
+<div class="flags">⚠ star_farm_suspect — 7 日新增 530 星，但 30 天 commit=0、贡献者≤1</div>      </div>
+      <div class="score">
+        <b>75.0</b><span>宝藏分</span>
+&lt;svg class=&#34;spark&#34; viewBox=&#34;0 0 140 34&#34; width=&#34;140&#34; height=&#34;34&#34; preserveAspectRatio=&#34;none&#34; role=&#34;img&#34; aria-label=&#34;近 30 日星增速&#34;&gt;&lt;polyline points=&#34;0,34 0.0,7.9 4.8,5.0 9.7,11.1 14.5,14.1 19.3,16.1 24.1,13.1 29.0,15.0 33.8,13.0 38.6,15.0 43.4,15.6 48.3,22.4 53.1,24.0 57.9,23.2 62.8,26.1 67.6,26.3 72.4,14.6 77.2,21.4 82.1,25.3 86.9,16.2 91.7,23.3 96.6,22.6 101.4,25.5 106.2,27.6 111.0,28.1 115.9,27.5 120.7,28.8 125.5,26.6 130.3,27.4 135.2,27.1 140.0,31.0 140,34&#34; fill=&#34;#4f9cf9&#34; fill-opacity=&#34;0.12&#34; stroke=&#34;none&#34;/&gt;&lt;polyline points=&#34;0.0,7.9 4.8,5.0 9.7,11.1 14.5,14.1 19.3,16.1 24.1,13.1 29.0,15.0 33.8,13.0 38.6,15.0 43.4,15.6 48.3,22.4 53.1,24.0 57.9,23.2 62.8,26.1 67.6,26.3 72.4,14.6 77.2,21.4 82.1,25.3 86.9,16.2 91.7,23.3 96.6,22.6 101.4,25.5 106.2,27.6 111.0,28.1 115.9,27.5 120.7,28.8 125.5,26.6 130.3,27.4 135.2,27.1 140.0,31.0&#34; fill=&#34;none&#34; stroke=&#34;#4f9cf9&#34; stroke-width=&#34;1.6&#34; stroke-linejoin=&#34;round&#34; stroke-linecap=&#34;round&#34;/&gt;&lt;/svg&gt;      </div>
+    </div>
+    <div class="card">
+      <div class="rank">9</div>
+      <div class="main">
+        <div class="title">
+          <a href="https://github.com/Significant-Gravitas/AutoGPT" target="_blank" rel="noreferrer">Significant-Gravitas/AutoGPT</a>
+          <span class="badge tier-watch">👀 观察</span>
+        </div>
+          <div class="llm"><b>亮点</b>：AutoGPT 是早期自主智能体项目，现转向低代码 AI 应用构建平台。</div>
+          <div class="llm"><b>为什么现在</b>：AI 智能体赛道持续火热，AutoGPT 迭代活跃，平台化转型可能带来新生态。</div>
+          <div class="llm"><b>风险</b>：项目方向多次调整，定位模糊，竞争激烈，社区热度下降。</div>
+          <div class="llm"><b>同类</b>：LangChain</div>
+        <div class="meta">
+          ⭐ 187,224 · 7 日 <code>+204</code> · 30 日 <code>+1045</code>
+          · 加速度 <code>0.84x</code> · 建库 <code>1273</code> 天
+          · Python
+        </div>
+        <div class="meta">信号：db</div>
+<div class="flags">⚠ star_farm_suspect — 7 日新增 204 星，但 30 天 commit=0、贡献者≤1</div>      </div>
+      <div class="score">
+        <b>62.29</b><span>宝藏分</span>
+&lt;svg class=&#34;spark&#34; viewBox=&#34;0 0 140 34&#34; width=&#34;140&#34; height=&#34;34&#34; preserveAspectRatio=&#34;none&#34; role=&#34;img&#34; aria-label=&#34;近 30 日星增速&#34;&gt;&lt;polyline points=&#34;0,34 0.0,16.4 4.8,21.6 9.7,18.5 14.5,24.2 19.3,23.7 24.1,24.2 29.0,14.9 33.8,20.6 38.6,26.3 43.4,24.8 48.3,11.8 53.1,9.2 57.9,5.0 62.8,29.4 67.6,20.6 72.4,15.9 77.2,15.4 82.1,22.7 86.9,20.1 91.7,19.0 96.6,23.2 101.4,23.2 106.2,24.2 111.0,23.7 115.9,15.9 120.7,20.6 125.5,27.9 130.3,24.8 135.2,21.6 140.0,31.0 140,34&#34; fill=&#34;#4f9cf9&#34; fill-opacity=&#34;0.12&#34; stroke=&#34;none&#34;/&gt;&lt;polyline points=&#34;0.0,16.4 4.8,21.6 9.7,18.5 14.5,24.2 19.3,23.7 24.1,24.2 29.0,14.9 33.8,20.6 38.6,26.3 43.4,24.8 48.3,11.8 53.1,9.2 57.9,5.0 62.8,29.4 67.6,20.6 72.4,15.9 77.2,15.4 82.1,22.7 86.9,20.1 91.7,19.0 96.6,23.2 101.4,23.2 106.2,24.2 111.0,23.7 115.9,15.9 120.7,20.6 125.5,27.9 130.3,24.8 135.2,21.6 140.0,31.0&#34; fill=&#34;none&#34; stroke=&#34;#4f9cf9&#34; stroke-width=&#34;1.6&#34; stroke-linejoin=&#34;round&#34; stroke-linecap=&#34;round&#34;/&gt;&lt;/svg&gt;      </div>
+    </div>
+  </div>
+  <div class="section" id="sec-rising">
+    <h2 style="font-size:19px;">🚀 新星榜 Rising Stars</h2>
+    <div class="card">
+      <div class="rank">1</div>
+      <div class="main">
+        <div class="title">
+          <a href="https://github.com/sec-lab/cve-playground" target="_blank" rel="noreferrer">sec-lab/cve-playground</a>
+          <span class="badge tier-explosive">🔥 爆款前夜</span>
+        </div>
+          <div class="llm"><b>亮点</b>：CVE 复现环境与利用链合集，含中文分析，适合安全学习。</div>
+          <div class="llm"><b>为什么现在</b>：CVE 复现需求高，仓库增长快，中文内容稀缺，近期热度上升明显。</div>
+          <div class="llm"><b>风险</b>：项目新，内容质量与维护持续性待验证，可能涉及敏感利用代码。</div>
+          <div class="llm"><b>同类</b>：vulhub</div>
+        <div class="meta">
+          ⭐ 150 · 7 日 <code>+34</code> · 30 日 <code>+117</code>
+          · 加速度 <code>1.25x</code> · 建库 <code>40</code> 天
+          · C
+        </div>
+        <div class="meta">信号：db</div>
+      </div>
+      <div class="score">
+        <b>100.0</b><span>宝藏分</span>
+&lt;svg class=&#34;spark&#34; viewBox=&#34;0 0 140 34&#34; width=&#34;140&#34; height=&#34;34&#34; preserveAspectRatio=&#34;none&#34; role=&#34;img&#34; aria-label=&#34;近 30 日星增速&#34;&gt;&lt;polyline points=&#34;0,34 0.0,22.3 5.8,20.2 11.7,22.3 17.5,18.0 23.3,22.3 29.2,20.2 35.0,22.3 40.8,22.3 46.7,20.2 52.5,22.3 58.3,18.0 64.2,22.3 70.0,20.2 75.8,22.3 81.7,22.3 87.5,20.2 93.3,22.3 99.2,18.0 105.0,22.3 110.8,20.2 116.7,22.3 122.5,5.0 128.3,15.8 134.2,26.7 140.0,31.0 140,34&#34; fill=&#34;#4f9cf9&#34; fill-opacity=&#34;0.12&#34; stroke=&#34;none&#34;/&gt;&lt;polyline points=&#34;0.0,22.3 5.8,20.2 11.7,22.3 17.5,18.0 23.3,22.3 29.2,20.2 35.0,22.3 40.8,22.3 46.7,20.2 52.5,22.3 58.3,18.0 64.2,22.3 70.0,20.2 75.8,22.3 81.7,22.3 87.5,20.2 93.3,22.3 99.2,18.0 105.0,22.3 110.8,20.2 116.7,22.3 122.5,5.0 128.3,15.8 134.2,26.7 140.0,31.0&#34; fill=&#34;none&#34; stroke=&#34;#4f9cf9&#34; stroke-width=&#34;1.6&#34; stroke-linejoin=&#34;round&#34; stroke-linecap=&#34;round&#34;/&gt;&lt;/svg&gt;      </div>
+    </div>
+    <div class="card">
+      <div class="rank">2</div>
+      <div class="main">
+        <div class="title">
+          <a href="https://github.com/deepseek-ai/deepseek-harness" target="_blank" rel="noreferrer">deepseek-ai/deepseek-harness</a>
+          <span class="badge tier-high">⭐ 高潜</span>
+        </div>
+          <div class="llm"><b>亮点</b>：DeepSeek官方插件化Agent框架，宣称万物皆插件。</div>
+          <div class="llm"><b>为什么现在</b>：DeepSeek生态扩展，插件化架构契合AI Agent趋势，发布即获高关注。</div>
+          <div class="llm"><b>风险</b>：仓库极新，星数增长异常，需验证真实性与长期维护。</div>
+          <div class="llm"><b>同类</b>：LangChain</div>
+        <div class="meta">
+          ⭐ 217,255 · 7 日 <code>+7446</code> · 30 日 <code>+217250</code>
+          · 加速度 <code>0.14x</code> · 建库 <code>27</code> 天
+          · TypeScript
+        </div>
+        <div class="meta">信号：db</div>
+<div class="flags">⚠ star_farm_suspect — 7 日新增 7446 星，但 30 天 commit=0、贡献者≤1</div>      </div>
+      <div class="score">
+        <b>84.63</b><span>宝藏分</span>
+&lt;svg class=&#34;spark&#34; viewBox=&#34;0 0 140 34&#34; width=&#34;140&#34; height=&#34;34&#34; preserveAspectRatio=&#34;none&#34; role=&#34;img&#34; aria-label=&#34;近 30 日星增速&#34;&gt;&lt;polyline points=&#34;0,34 0.0,31.0 4.8,31.0 9.7,5.0 14.5,21.6 19.3,24.7 24.1,24.0 29.0,26.1 33.8,28.0 38.6,28.6 43.4,28.5 48.3,29.0 53.1,29.8 57.9,29.7 62.8,29.7 67.6,29.9 72.4,30.1 77.2,30.2 82.1,30.5 86.9,30.5 91.7,30.4 96.6,30.4 101.4,30.4 106.2,30.4 111.0,30.5 115.9,30.6 120.7,30.7 125.5,30.6 130.3,30.6 135.2,30.6 140.0,30.8 140,34&#34; fill=&#34;#4f9cf9&#34; fill-opacity=&#34;0.12&#34; stroke=&#34;none&#34;/&gt;&lt;polyline points=&#34;0.0,31.0 4.8,31.0 9.7,5.0 14.5,21.6 19.3,24.7 24.1,24.0 29.0,26.1 33.8,28.0 38.6,28.6 43.4,28.5 48.3,29.0 53.1,29.8 57.9,29.7 62.8,29.7 67.6,29.9 72.4,30.1 77.2,30.2 82.1,30.5 86.9,30.5 91.7,30.4 96.6,30.4 101.4,30.4 106.2,30.4 111.0,30.5 115.9,30.6 120.7,30.7 125.5,30.6 130.3,30.6 135.2,30.6 140.0,30.8&#34; fill=&#34;none&#34; stroke=&#34;#4f9cf9&#34; stroke-width=&#34;1.6&#34; stroke-linejoin=&#34;round&#34; stroke-linecap=&#34;round&#34;/&gt;&lt;/svg&gt;      </div>
+    </div>
+    <div class="card">
+      <div class="rank">3</div>
+      <div class="main">
+        <div class="title">
+          <a href="https://github.com/anywhere-labs/dsh-desktop" target="_blank" rel="noreferrer">anywhere-labs/dsh-desktop</a>
+          <span class="badge tier-high">⭐ 高潜</span>
+        </div>
+          <div class="llm"><b>亮点</b>：将桌面环境本身插件化的 DeepSeek 生态入口，理念新颖。</div>
+          <div class="llm"><b>为什么现在</b>：DeepSeek 生态热度高，插件化桌面概念稀缺，早期增长迅猛。</div>
+          <div class="llm"><b>风险</b>：创建仅 27 天，架构与稳定性未验证，可能为概念炒作。</div>
+        <div class="meta">
+          ⭐ 24,778 · 7 日 <code>+1720</code> · 30 日 <code>+24778</code>
+          · 加速度 <code>0.28x</code> · 建库 <code>27</code> 天
+          · TypeScript
+        </div>
+        <div class="meta">信号：db</div>
+<div class="flags">⚠ star_farm_suspect — 7 日新增 1720 星，但 30 天 commit=0、贡献者≤1</div>      </div>
+      <div class="score">
+        <b>76.45</b><span>宝藏分</span>
+&lt;svg class=&#34;spark&#34; viewBox=&#34;0 0 140 34&#34; width=&#34;140&#34; height=&#34;34&#34; preserveAspectRatio=&#34;none&#34; role=&#34;img&#34; aria-label=&#34;近 30 日星增速&#34;&gt;&lt;polyline points=&#34;0,34 0.0,31.0 4.8,31.0 9.7,29.7 14.5,11.2 19.3,5.0 24.1,8.8 29.0,16.0 33.8,19.5 38.6,20.4 43.4,23.0 48.3,24.6 53.1,25.9 57.9,26.0 62.8,26.5 67.6,27.6 72.4,27.3 77.2,28.1 82.1,28.7 86.9,29.0 91.7,28.8 96.6,28.6 101.4,29.0 106.2,29.0 111.0,28.8 115.9,29.4 120.7,29.6 125.5,29.5 130.3,29.0 135.2,28.9 140.0,30.0 140,34&#34; fill=&#34;#4f9cf9&#34; fill-opacity=&#34;0.12&#34; stroke=&#34;none&#34;/&gt;&lt;polyline points=&#34;0.0,31.0 4.8,31.0 9.7,29.7 14.5,11.2 19.3,5.0 24.1,8.8 29.0,16.0 33.8,19.5 38.6,20.4 43.4,23.0 48.3,24.6 53.1,25.9 57.9,26.0 62.8,26.5 67.6,27.6 72.4,27.3 77.2,28.1 82.1,28.7 86.9,29.0 91.7,28.8 96.6,28.6 101.4,29.0 106.2,29.0 111.0,28.8 115.9,29.4 120.7,29.6 125.5,29.5 130.3,29.0 135.2,28.9 140.0,30.0&#34; fill=&#34;none&#34; stroke=&#34;#4f9cf9&#34; stroke-width=&#34;1.6&#34; stroke-linejoin=&#34;round&#34; stroke-linecap=&#34;round&#34;/&gt;&lt;/svg&gt;      </div>
+    </div>
+    <div class="card">
+      <div class="rank">4</div>
+      <div class="main">
+        <div class="title">
+          <a href="https://github.com/firecrawl/anydoc" target="_blank" rel="noreferrer">firecrawl/anydoc</a>
+          <span class="badge tier-watch">👀 观察</span>
+        </div>
+          <div class="llm"><b>亮点</b>：用 Rust 将 Office 文档转 Markdown，提供 Node/Python 绑定。</div>
+          <div class="llm"><b>为什么现在</b>：文档转 Markdown 需求稳定，Rust 性能优势明显，且 30 天星增 7k+ 验证了市场兴趣。</div>
+          <div class="llm"><b>风险</b>：项目仅 37 天，API 稳定性与格式兼容性待验证。</div>
+          <div class="llm"><b>同类</b>：mammoth</div>
+        <div class="meta">
+          ⭐ 20,893 · 7 日 <code>+796</code> · 30 日 <code>+7175</code>
+          · 加速度 <code>0.48x</code> · 建库 <code>37</code> 天
+          · Rust
+        </div>
+        <div class="meta">信号：db</div>
+<div class="flags">⚠ star_farm_suspect — 7 日新增 796 星，但 30 天 commit=0、贡献者≤1</div>      </div>
+      <div class="score">
+        <b>58.14</b><span>宝藏分</span>
+&lt;svg class=&#34;spark&#34; viewBox=&#34;0 0 140 34&#34; width=&#34;140&#34; height=&#34;34&#34; preserveAspectRatio=&#34;none&#34; role=&#34;img&#34; aria-label=&#34;近 30 日星增速&#34;&gt;&lt;polyline points=&#34;0,34 0.0,5.0 4.8,14.7 9.7,13.6 14.5,23.6 19.3,28.0 24.1,26.2 29.0,24.3 33.8,24.0 38.6,24.7 43.4,23.4 48.3,27.8 53.1,27.8 57.9,27.3 62.8,26.8 67.6,28.5 72.4,29.5 77.2,23.7 82.1,26.1 86.9,28.4 91.7,24.9 96.6,25.7 101.4,27.1 106.2,26.7 111.0,28.5 115.9,30.1 120.7,29.9 125.5,29.2 130.3,28.3 135.2,29.7 140.0,31.0 140,34&#34; fill=&#34;#4f9cf9&#34; fill-opacity=&#34;0.12&#34; stroke=&#34;none&#34;/&gt;&lt;polyline points=&#34;0.0,5.0 4.8,14.7 9.7,13.6 14.5,23.6 19.3,28.0 24.1,26.2 29.0,24.3 33.8,24.0 38.6,24.7 43.4,23.4 48.3,27.8 53.1,27.8 57.9,27.3 62.8,26.8 67.6,28.5 72.4,29.5 77.2,23.7 82.1,26.1 86.9,28.4 91.7,24.9 96.6,25.7 101.4,27.1 106.2,26.7 111.0,28.5 115.9,30.1 120.7,29.9 125.5,29.2 130.3,28.3 135.2,29.7 140.0,31.0&#34; fill=&#34;none&#34; stroke=&#34;#4f9cf9&#34; stroke-width=&#34;1.6&#34; stroke-linejoin=&#34;round&#34; stroke-linecap=&#34;round&#34;/&gt;&lt;/svg&gt;      </div>
+    </div>
+  </div>
+  <div class="section" id="sec-tech">
+    <h2 style="font-size:19px;">📰 科技资讯 Tech Radar</h2>
+    <div class="card">
+      <div class="rank">1</div>
+      <div class="main">
+        <div class="title">
+          <a href="https://github.com/vikiboss/60s" target="_blank" rel="noreferrer">vikiboss/60s</a>
+          <span class="badge tier-explosive">🔥 爆款前夜</span>
+        </div>
+          <div class="llm"><b>亮点</b>：一个聚合多类免费开放 API 的集合，支持多平台部署。</div>
+          <div class="llm"><b>为什么现在</b>：API 聚合需求持续存在，项目维护活跃且星数增长，适合开发者快速集成。</div>
+          <div class="llm"><b>风险</b>：依赖第三方数据源，可能受限于来源稳定性与合规性。</div>
+          <div class="llm"><b>同类</b>：public-apis</div>
+        <div class="meta">
+          ⭐ 5,732 · 7 日 <code>+27</code> · 30 日 <code>+124</code>
+          · 加速度 <code>0.93x</code> · 建库 <code>1379</code> 天
+          · TypeScript
+        </div>
+        <div class="meta">信号：db</div>
+      </div>
+      <div class="score">
+        <b>96.44</b><span>宝藏分</span>
+&lt;svg class=&#34;spark&#34; viewBox=&#34;0 0 140 34&#34; width=&#34;140&#34; height=&#34;34&#34; preserveAspectRatio=&#34;none&#34; role=&#34;img&#34; aria-label=&#34;近 30 日星增速&#34;&gt;&lt;polyline points=&#34;0,34 0.0,18.0 4.8,21.2 9.7,18.0 14.5,21.2 19.3,27.8 24.1,14.8 29.0,14.8 33.8,14.8 38.6,14.8 43.4,18.0 48.3,27.8 53.1,24.5 57.9,14.8 62.8,14.8 67.6,8.2 72.4,8.2 77.2,21.2 82.1,21.2 86.9,31.0 91.7,11.5 96.6,5.0 101.4,21.2 106.2,5.0 111.0,18.0 115.9,27.8 120.7,14.8 125.5,14.8 130.3,14.8 135.2,21.2 140.0,18.0 140,34&#34; fill=&#34;#4f9cf9&#34; fill-opacity=&#34;0.12&#34; stroke=&#34;none&#34;/&gt;&lt;polyline points=&#34;0.0,18.0 4.8,21.2 9.7,18.0 14.5,21.2 19.3,27.8 24.1,14.8 29.0,14.8 33.8,14.8 38.6,14.8 43.4,18.0 48.3,27.8 53.1,24.5 57.9,14.8 62.8,14.8 67.6,8.2 72.4,8.2 77.2,21.2 82.1,21.2 86.9,31.0 91.7,11.5 96.6,5.0 101.4,21.2 106.2,5.0 111.0,18.0 115.9,27.8 120.7,14.8 125.5,14.8 130.3,14.8 135.2,21.2 140.0,18.0&#34; fill=&#34;none&#34; stroke=&#34;#4f9cf9&#34; stroke-width=&#34;1.6&#34; stroke-linejoin=&#34;round&#34; stroke-linecap=&#34;round&#34;/&gt;&lt;/svg&gt;      </div>
+    </div>
+  </div>
+  <div class="section" id="sec-security">
+    <h2 style="font-size:19px;">🛡️ 安全 &amp; 逆向</h2>
+      <div class="empty">今日该频道无满足质量红线的项目（宁缺毋滥）。</div>
+  </div>
+  <div class="section" id="sec-tools">
+    <h2 style="font-size:19px;">🧰 效率工具</h2>
+    <div class="card">
+      <div class="rank">1</div>
+      <div class="main">
+        <div class="title">
+          <a href="https://github.com/yt-dlp/yt-dlp" target="_blank" rel="noreferrer">yt-dlp/yt-dlp</a>
+          <span class="badge tier-explosive">🔥 爆款前夜</span>
+        </div>
+          <div class="llm"><b>亮点</b>：功能强大的命令行音视频下载器，youtube-dl 的活跃继任者。</div>
+          <div class="llm"><b>为什么现在</b>：持续高频更新，紧跟平台反爬，社区活跃，是下载工具首选。</div>
+          <div class="llm"><b>风险</b>：依赖第三方网站接口，存在法律与稳定性风险。</div>
+          <div class="llm"><b>同类</b>：youtube-dl</div>
+        <div class="meta">
+          ⭐ 189,970 · 7 日 <code>+1433</code> · 30 日 <code>+6601</code>
+          · 加速度 <code>0.93x</code> · 建库 <code>2144</code> 天
+          · Python
+        </div>
+        <div class="meta">信号：db</div>
+<div class="flags">⚠ star_farm_suspect — 7 日新增 1433 星，但 30 天 commit=0、贡献者≤1</div>      </div>
+      <div class="score">
+        <b>100.0</b><span>宝藏分</span>
+&lt;svg class=&#34;spark&#34; viewBox=&#34;0 0 140 34&#34; width=&#34;140&#34; height=&#34;34&#34; preserveAspectRatio=&#34;none&#34; role=&#34;img&#34; aria-label=&#34;近 30 日星增速&#34;&gt;&lt;polyline points=&#34;0,34 0.0,15.6 4.8,19.6 9.7,13.8 14.5,18.1 19.3,17.1 24.1,10.7 29.0,10.5 33.8,5.0 38.6,11.0 43.4,12.7 48.3,13.4 53.1,16.4 57.9,14.6 62.8,14.1 67.6,14.0 72.4,9.3 77.2,14.9 82.1,17.6 86.9,17.6 91.7,14.8 96.6,14.6 101.4,14.2 106.2,17.1 111.0,14.7 115.9,13.4 120.7,11.9 125.5,12.8 130.3,12.3 135.2,18.4 140.0,31.0 140,34&#34; fill=&#34;#4f9cf9&#34; fill-opacity=&#34;0.12&#34; stroke=&#34;none&#34;/&gt;&lt;polyline points=&#34;0.0,15.6 4.8,19.6 9.7,13.8 14.5,18.1 19.3,17.1 24.1,10.7 29.0,10.5 33.8,5.0 38.6,11.0 43.4,12.7 48.3,13.4 53.1,16.4 57.9,14.6 62.8,14.1 67.6,14.0 72.4,9.3 77.2,14.9 82.1,17.6 86.9,17.6 91.7,14.8 96.6,14.6 101.4,14.2 106.2,17.1 111.0,14.7 115.9,13.4 120.7,11.9 125.5,12.8 130.3,12.3 135.2,18.4 140.0,31.0&#34; fill=&#34;none&#34; stroke=&#34;#4f9cf9&#34; stroke-width=&#34;1.6&#34; stroke-linejoin=&#34;round&#34; stroke-linecap=&#34;round&#34;/&gt;&lt;/svg&gt;      </div>
+    </div>
+    <div class="card">
+      <div class="rank">2</div>
+      <div class="main">
+        <div class="title">
+          <a href="https://github.com/ohmyzsh/ohmyzsh" target="_blank" rel="noreferrer">ohmyzsh/ohmyzsh</a>
+          <span class="badge tier-watch">👀 观察</span>
+        </div>
+          <div class="llm"><b>亮点</b>：社区驱动的 zsh 配置管理框架，含 300+ 插件和 140+ 主题。</div>
+          <div class="llm"><b>为什么现在</b>：作为长期维护的经典项目，持续更新，适合新用户快速配置 zsh 环境。</div>
+          <div class="llm"><b>风险</b>：项目成熟，创新空间有限，但无明显风险。</div>
+          <div class="llm"><b>同类</b>：prezto</div>
+        <div class="meta">
+          ⭐ 189,648 · 7 日 <code>+194</code> · 30 日 <code>+811</code>
+          · 加速度 <code>1.03x</code> · 建库 <code>6221</code> 天
+          · Shell
+        </div>
+        <div class="meta">信号：db</div>
+<div class="flags">⚠ star_farm_suspect — 7 日新增 194 星，但 30 天 commit=0、贡献者≤1</div>      </div>
+      <div class="score">
+        <b>69.91</b><span>宝藏分</span>
+&lt;svg class=&#34;spark&#34; viewBox=&#34;0 0 140 34&#34; width=&#34;140&#34; height=&#34;34&#34; preserveAspectRatio=&#34;none&#34; role=&#34;img&#34; aria-label=&#34;近 30 日星增速&#34;&gt;&lt;polyline points=&#34;0,34 0.0,13.7 4.8,20.6 9.7,5.0 14.5,18.0 19.3,18.0 24.1,15.4 29.0,13.7 33.8,14.5 38.6,23.2 43.4,15.4 48.3,11.1 53.1,27.5 57.9,18.0 62.8,21.5 67.6,18.0 72.4,6.7 77.2,18.0 82.1,22.3 86.9,18.9 91.7,16.3 96.6,18.9 101.4,21.5 106.2,21.5 111.0,11.1 115.9,20.6 120.7,18.0 125.5,5.9 130.3,21.5 135.2,7.6 140.0,31.0 140,34&#34; fill=&#34;#4f9cf9&#34; fill-opacity=&#34;0.12&#34; stroke=&#34;none&#34;/&gt;&lt;polyline points=&#34;0.0,13.7 4.8,20.6 9.7,5.0 14.5,18.0 19.3,18.0 24.1,15.4 29.0,13.7 33.8,14.5 38.6,23.2 43.4,15.4 48.3,11.1 53.1,27.5 57.9,18.0 62.8,21.5 67.6,18.0 72.4,6.7 77.2,18.0 82.1,22.3 86.9,18.9 91.7,16.3 96.6,18.9 101.4,21.5 106.2,21.5 111.0,11.1 115.9,20.6 120.7,18.0 125.5,5.9 130.3,21.5 135.2,7.6 140.0,31.0&#34; fill=&#34;none&#34; stroke=&#34;#4f9cf9&#34; stroke-width=&#34;1.6&#34; stroke-linejoin=&#34;round&#34; stroke-linecap=&#34;round&#34;/&gt;&lt;/svg&gt;      </div>
+    </div>
+    <div class="card">
+      <div class="rank">3</div>
+      <div class="main">
+        <div class="title">
+          <a href="https://github.com/google-gemini/gemini-cli" target="_blank" rel="noreferrer">google-gemini/gemini-cli</a>
+          <span class="badge tier-watch">👀 观察</span>
+        </div>
+          <div class="llm"><b>亮点</b>：Google 官方开源终端 AI Agent，支持 MCP，直连 Gemini。</div>
+          <div class="llm"><b>为什么现在</b>：AI Agent 终端化趋势明确，Google 背书且星数破十万，生态潜力大。</div>
+          <div class="llm"><b>风险</b>：依赖 Google 云服务，可能受限于 Gemini API 定价与区域可用性。</div>
+          <div class="llm"><b>同类</b>：OpenAI Codex CLI</div>
+        <div class="meta">
+          ⭐ 106,876 · 7 日 <code>+175</code> · 30 日 <code>+833</code>
+          · 加速度 <code>0.90x</code> · 建库 <code>510</code> 天
+          · TypeScript
+        </div>
+        <div class="meta">信号：db</div>
+<div class="flags">⚠ star_farm_suspect — 7 日新增 175 星，但 30 天 commit=0、贡献者≤1</div>      </div>
+      <div class="score">
+        <b>58.39</b><span>宝藏分</span>
+&lt;svg class=&#34;spark&#34; viewBox=&#34;0 0 140 34&#34; width=&#34;140&#34; height=&#34;34&#34; preserveAspectRatio=&#34;none&#34; role=&#34;img&#34; aria-label=&#34;近 30 日星增速&#34;&gt;&lt;polyline points=&#34;0,34 0.0,8.7 4.8,16.9 9.7,21.3 14.5,8.0 19.3,22.8 24.1,22.1 29.0,15.4 33.8,16.9 38.6,13.9 43.4,22.1 48.3,17.6 53.1,16.1 57.9,13.2 62.8,5.0 67.6,16.1 72.4,13.9 77.2,13.2 82.1,16.9 86.9,19.9 91.7,22.8 96.6,17.6 101.4,25.1 106.2,12.4 111.0,8.0 115.9,21.3 120.7,22.1 125.5,16.9 130.3,15.4 135.2,19.1 140.0,31.0 140,34&#34; fill=&#34;#4f9cf9&#34; fill-opacity=&#34;0.12&#34; stroke=&#34;none&#34;/&gt;&lt;polyline points=&#34;0.0,8.7 4.8,16.9 9.7,21.3 14.5,8.0 19.3,22.8 24.1,22.1 29.0,15.4 33.8,16.9 38.6,13.9 43.4,22.1 48.3,17.6 53.1,16.1 57.9,13.2 62.8,5.0 67.6,16.1 72.4,13.9 77.2,13.2 82.1,16.9 86.9,19.9 91.7,22.8 96.6,17.6 101.4,25.1 106.2,12.4 111.0,8.0 115.9,21.3 120.7,22.1 125.5,16.9 130.3,15.4 135.2,19.1 140.0,31.0&#34; fill=&#34;none&#34; stroke=&#34;#4f9cf9&#34; stroke-width=&#34;1.6&#34; stroke-linejoin=&#34;round&#34; stroke-linecap=&#34;round&#34;/&gt;&lt;/svg&gt;      </div>
+    </div>
+  </div>
+
+  <footer>Treasure Radar · 数据来自 GitHub 官方 API / Trending / Hacker News · 仓库级数据不走 HTML 抓取</footer>
+</div>
+<script>
+  document.querySelectorAll('.tab').forEach(function(t){
+    t.addEventListener('click', function(){
+      document.querySelectorAll('.tab').forEach(x=>x.classList.remove('active'));
+      document.querySelectorAll('.section').forEach(x=>x.classList.remove('active'));
+      t.classList.add('active');
+      var el = document.getElementById(t.dataset.target);
+      if (el) el.classList.add('active');
+    });
+  });
+</script>
+</body>
+</html>

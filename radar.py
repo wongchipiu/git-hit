@@ -116,7 +116,7 @@ def cmd_status(args: argparse.Namespace) -> int:
     from radar.pipeline.context import build_runtime
 
     cfg = _cfg(args)
-    rt = build_runtime(cfg, offline=True)
+    rt = build_runtime(cfg, offline=False)  # 仅读本地库统计，不发网络请求；须读正式库
     try:
         stats = rt.store.stats()
         token = "已配置" if cfg.github_token else "未配置（匿名 60 次/小时）"

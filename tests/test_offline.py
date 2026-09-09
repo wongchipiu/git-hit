@@ -24,7 +24,8 @@ from radar.sources import expand_weekly  # noqa: E402
 
 
 def _series(values: dict[int, int], today: date | None = None) -> list[tuple[str, int]]:
-    today = today or date.today()
+    # 与生产口径保持一致：star_daily 日期来自 GitHub API（UTC），compute_growth 默认也用 UTC today
+    today = today or datetime.now(timezone.utc).date()
     return sorted(((str(today - timedelta(days=i)), v) for i, v in values.items()))
 
 
@@ -42,7 +43,8 @@ class TestStarHistory(unittest.TestCase):
 
     def test_compute_growth_basic(self):
         series = _series({0: 50, 1: 40, 2: 30, 3: 20, 4: 10, 5: 10, 6: 10})
-        g = compute_growth(series, stars_total=1000, created_at=str(date.today() - timedelta(days=20)))
+        g = compute_growth(series, stars_total=1000,
+                           created_at=str(datetime.now(timezone.utc).date() - timedelta(days=20)))
         self.assertAlmostEqual(g.v7, sum(v for _, v in series) / 7, places=5)
         self.assertGreater(g.accel, 1.0)
         self.assertEqual(g.age_days, 20)
@@ -96,7 +98,7 @@ class TestClassifier(unittest.TestCase):
 class TestQuality(unittest.TestCase):
     def test_constant_pulse_flagged(self):
         g = compute_growth(_series({i: 30 for i in range(30)}), stars_total=2000,
-                           created_at=str(date.today() - timedelta(days=40)))
+                           created_at=str(datetime.now(timezone.utc).date() - timedelta(days=40)))
         v = anti_fraud(g, {"full_name": "a/b", "description": "x", "topics": []},
                        {"commit_count_30d": 0, "contributors": 1})
         self.assertIn("star_farm_suspect", v.flags)
@@ -124,7 +126,7 @@ class TestQuality(unittest.TestCase):
         vals.update({i: 60 for i in range(7, 14)})
         vals.update({i: 20 for i in range(14, 30)})
         g = compute_growth(_series(vals), stars_total=800,
-                           created_at=str(date.today() - timedelta(days=60)))
+                           created_at=str(datetime.now(timezone.utc).date() - timedelta(days=60)))
         pushed = (datetime.now(timezone.utc) - timedelta(days=120)).isoformat()
         v = anti_fraud(g, {"full_name": "a/b", "description": "x", "topics": []},
                        {"pushed_at": pushed})
@@ -141,7 +143,7 @@ class TestScoring(unittest.TestCase):
         cfg = self._cfg()
         scorer = Scorer(cfg)
         g = compute_growth(_series({0: 200, 1: 150, 2: 100, 3: 80}), stars_total=3000,
-                           created_at=str(date.today() - timedelta(days=20)))
+                           created_at=str(datetime.now(timezone.utc).date() - timedelta(days=20)))
         cls = Classifier().classify({"full_name": "a/b", "description": "agent llm",
                                      "topics": ["llm"]})
         r = scorer.score({"repo_id": 1, "full_name": "a/b"}, g, cls,

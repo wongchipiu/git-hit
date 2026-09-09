@@ -9,6 +9,7 @@
 from __future__ import annotations
 
 import hashlib
+import http.client
 import json
 import time
 import urllib.error
@@ -142,11 +143,38 @@ class Analyst:
             },
             method="POST",
         )
-        try:
-            with urllib.request.urlopen(req, timeout=self.timeout) as r:
-                data = json.loads(r.read().decode("utf-8"))
-        except (urllib.error.HTTPError, urllib.error.URLError, TimeoutError, OSError, ValueError) as e:
-            log.warning("DeepSeek 调用失败（降级为无点评）：%s", e)
+        data = None
+        for attempt in range(3):
+            try:
+                with urllib.request.urlopen(req, timeout=self.timeout) as r:
+                    data = json.loads(r.read().decode("utf-8"))
+                break
+            except urllib.error.HTTPError as e:
+                # 429 / 5xx 视为瞬时故障，退避后重试；其余 4xx（密钥/参数错误）立即放弃
+                if e.code in (429, 500, 502, 503, 504) and attempt < 2:
+                    wait = 2.0 * (attempt + 1)
+                    log.warning("DeepSeek 临时错误 HTTP %s，%.0f 秒后重试（%d/3）",
+                                e.code, wait, attempt + 1)
+                    time.sleep(wait)
+                    continue
+                log.warning("DeepSeek 调用失败（降级为无点评）：HTTP %s", e.code)
+                return None
+            except (urllib.error.URLError, TimeoutError, OSError,
+                    http.client.HTTPException) as e:
+                # 连接重置 / 分块读取不完整（IncompleteRead）等瞬时网络故障，退避重试
+                if attempt < 2:
+                    wait = 2.0 * (attempt + 1)
+                    log.warning("DeepSeek 网络中断（%s），%.0f 秒后重试（%d/3）",
+                                type(e).__name__, wait, attempt + 1)
+                    time.sleep(wait)
+                    continue
+                log.warning("DeepSeek 调用失败（降级为无点评）：%s", e)
+                return None
+            except ValueError as e:
+                # 200 但响应体非 JSON（网关异常页等），不重试，直接降级
+                log.warning("DeepSeek 响应解析失败（降级为无点评）：%s", e)
+                return None
+        if data is None:
             return None
 
         self.calls += 1

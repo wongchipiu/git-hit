@@ -87,7 +87,7 @@ class Collector:
                     if is_excluded(self.cfg, meta):
                         self.stats["skipped"] += 1
                         continue
-                    self._add(meta, channel=ch.key, source=f"search:{q}")
+                    self._add(meta, channel=ch.key, source=f"search:{rendered}")
                     self.stats["search_hits"] += 1
 
     def run_trending(self) -> None:

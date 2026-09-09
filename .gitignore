@@ -7,9 +7,12 @@ __pycache__/
 config.toml
 .env
 
-# 运行产物（注意：排除目录内容用 /* 才能重新包含 .gitkeep）
+# 运行产物：data/（SQLite 库）与 logs/ 不入库；
+# output/ 仅放行每日报告存档（md/json/html）与最新 report.html，供 git log 回溯
 data/
-output/*
-!output/.gitkeep
 logs/
 *.log
+output/*
+!output/.gitkeep
+!output/daily/
+!output/report.html

@@ -44,11 +44,12 @@ class Runtime:
 
 
 def build_runtime(cfg: Config, offline: bool = False, fixtures: dict[str, Any] | None = None) -> Runtime:
-    store = Store(cfg.db_path)
-
     if offline:
+        # 离线自测使用独立库，夹具数据绝不污染正式库 radar.db
+        store = Store(cfg.data_dir / "offline_radar.db")
         http = FixtureClient(fixtures.get("repos") if fixtures else None)
     else:
+        store = Store(cfg.db_path)
         http = HttpClient(
             user_agent=cfg.user_agent,
             timeout=float(cfg.github.get("timeout", 20)),

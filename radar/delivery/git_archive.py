@@ -25,16 +25,20 @@ def _run(args: Sequence[str], cwd: Path) -> tuple[int, str]:
 
 
 def ensure_repo(root: Path) -> bool:
-    """仓库不存在时初始化（仅在用户显式 init 时调用）。"""
+    """仓库不存在时初始化（仅在用户显式 init 时调用）；并确保本地提交身份存在。"""
     code, _ = _run(["git", "rev-parse", "--is-inside-work-tree"], root)
-    if code == 0:
-        return True
-    code, out = _run(["git", "init"], root)
     if code != 0:
-        log.warning("git init 失败：%s", out)
-        return False
-    _run(["git", "config", "user.name", "TreasureRadar"], root)
-    _run(["git", "config", "user.email", "radar@localhost"], root)
+        code, out = _run(["git", "init"], root)
+        if code != 0:
+            log.warning("git init 失败：%s", out)
+            return False
+    # 仓库可能是拷贝/克隆来的，或本机全局未配置身份；确保本地有提交身份（仅影响本仓库）
+    code, name = _run(["git", "config", "user.name"], root)
+    if code != 0 or not name.strip():
+        _run(["git", "config", "user.name", "TreasureRadar"], root)
+    code, email = _run(["git", "config", "user.email"], root)
+    if code != 0 or not email.strip():
+        _run(["git", "config", "user.email", "radar@localhost"], root)
     return True
 
 

@@ -201,6 +201,13 @@ def run_daily(
     commit: bool | None = None,
 ) -> dict[str, Any]:
     day = day or local_today(cfg).isoformat()
+    if offline:
+        # 离线自测：报告写到 <output_dir>/offline/（正式环境即 output/offline/，被
+        # .gitignore 忽略），且不做 Git 提交；数据库已在 build_runtime 中隔离为
+        # offline_radar.db——夹具产物与正式日报完全隔离
+        cfg.general["output_dir"] = str(Path(cfg.general.get("output_dir", "output")) / "offline")
+        commit = False
+        log.info("离线模式：产物写入离线目录与 offline_radar.db，不提交 Git")
     rt = build_runtime(cfg, offline=offline, fixtures=fixtures)
     try:
         candidates: dict[str, dict[str, Any]] = {}

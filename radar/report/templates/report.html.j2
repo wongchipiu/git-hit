@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GitHub 宝藏雷达 · {{ day }}</title>
+<style>
+  :root{
+    --bg:#0d1117; --panel:#161b22; --border:#30363d; --text:#e6edf3;
+    --muted:#8b949e; --link:#58a6ff; --hot:#f85149; --high:#d29922; --watch:#3fb950;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--text);
+       font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Microsoft YaHei",sans-serif;}
+  .wrap{max-width:1080px;margin:0 auto;padding:28px 20px 60px;}
+  header h1{font-size:26px;margin:0 0 6px;}
+  .sub{color:var(--muted);font-size:13px;margin-bottom:18px;}
+  .kpis{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:20px;}
+  .kpi{background:var(--panel);border:1px solid var(--border);border-radius:10px;
+       padding:10px 16px;min-width:120px;}
+  .kpi b{display:block;font-size:20px;}
+  .kpi span{color:var(--muted);font-size:12px;}
+  .tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px;}
+  .tab{background:var(--panel);border:1px solid var(--border);color:var(--muted);
+       border-radius:999px;padding:6px 14px;cursor:pointer;font-size:13px;}
+  .tab.active{color:var(--text);border-color:var(--link);background:#1f6feb22;}
+  .section{display:none;}
+  .section.active{display:block;}
+  .card{background:var(--panel);border:1px solid var(--border);border-radius:12px;
+        padding:14px 16px;margin-bottom:12px;display:flex;gap:16px;align-items:flex-start;}
+  .card .main{flex:1;min-width:0;}
+  .rank{color:var(--muted);font-size:13px;width:26px;flex:none;padding-top:2px;}
+  .title{font-size:16px;font-weight:600;}
+  .title a{color:var(--link);text-decoration:none;}
+  .title a:hover{text-decoration:underline;}
+  .desc{color:var(--muted);font-size:13px;margin:6px 0 8px;line-height:1.5;}
+  .meta{font-size:12px;color:var(--muted);line-height:1.9;}
+  .meta code{background:#6e768133;padding:1px 5px;border-radius:4px;}
+  .badge{display:inline-block;font-size:11px;padding:2px 8px;border-radius:999px;margin-left:8px;
+         border:1px solid var(--border);}
+  .tier-explosive{background:#f8514922;color:var(--hot);border-color:#f8514955;}
+  .tier-high{background:#d2992222;color:var(--high);border-color:#d2992255;}
+  .tier-watch{background:#3fb95022;color:var(--watch);border-color:#3fb95055;}
+  .score{flex:none;text-align:center;min-width:64px;}
+  .score b{display:block;font-size:22px;}
+  .score span{font-size:11px;color:var(--muted);}
+  .spark{display:block;margin-top:6px;opacity:.9;}
+  .llm{font-size:13px;line-height:1.6;margin:6px 0;}
+  .llm b{color:var(--text);}
+  .flags{font-size:12px;color:var(--high);margin-top:4px;}
+  .empty{color:var(--muted);padding:16px;border:1px dashed var(--border);border-radius:10px;}
+  footer{color:var(--muted);font-size:12px;margin-top:26px;text-align:center;}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1>🔭 GitHub 宝藏雷达 · {{ day }}</h1>
+    <div class="sub">早（比 Trending 早 3–14 天）· 真（反刷星 + 换皮去重）· 准（T+30 回测校准）· 垂直（财经频道做深）</div>
+  </header>
+
+  <div class="kpis">
+    <div class="kpi"><b>{{ stats.get('candidates', 0) }}</b><span>扫描候选</span></div>
+    <div class="kpi"><b>{{ stats.get('star_history', 0) }}</b><span>增速核验</span></div>
+    <div class="kpi"><b>{{ stats.get('deep_profile', 0) }}</b><span>深度画像</span></div>
+    <div class="kpi"><b>{{ total }}</b><span>今日入选</span></div>
+  </div>
+
+  <div class="tabs">
+    {% for ch in sections %}
+    <div class="tab{% if loop.first %} active{% endif %}" data-target="sec-{{ ch }}">{{ titles.get(ch, ch) }} ({{ sections[ch]|length }})</div>
+    {% endfor %}
+  </div>
+
+  {% for ch, items in sections.items() %}
+  <div class="section{% if loop.first %} active{% endif %}" id="sec-{{ ch }}">
+    <h2 style="font-size:19px;">{{ titles.get(ch, ch) }}</h2>
+    {% if not items %}
+      <div class="empty">今日该频道无满足质量红线的项目（宁缺毋滥）。</div>
+    {% endif %}
+    {% for it in items %}
+    <div class="card">
+      <div class="rank">{{ loop.index }}</div>
+      <div class="main">
+        <div class="title">
+          <a href="{{ it.url }}" target="_blank" rel="noreferrer">{{ it.full_name }}</a>
+          <span class="badge {{ tier_class.get(it.tier, 'tier-watch') }}">{{ tier_label.get(it.tier, '👀 观察') }}</span>
+        </div>
+        {% if it.llm and it.llm.get('highlight') %}
+          <div class="llm"><b>亮点</b>：{{ it.llm['highlight'] }}</div>
+        {% elif it.description %}
+          <div class="desc">{{ it.description }}</div>
+        {% endif %}
+        {% if it.llm and it.llm.get('why_now') %}
+          <div class="llm"><b>为什么现在</b>：{{ it.llm['why_now'] }}</div>
+        {% endif %}
+        {% if it.llm and it.llm.get('risk') %}
+          <div class="llm"><b>风险</b>：{{ it.llm['risk'] }}</div>
+        {% endif %}
+        {% if it.llm and it.llm.get('similar') and it.llm['similar'] not in ['无', ''] %}
+          <div class="llm"><b>同类</b>：{{ it.llm['similar'] }}</div>
+        {% endif %}
+        <div class="meta">
+          ⭐ {{ '{:,}'.format(it.stars) }} · 7 日 <code>+{{ it.stars_7d }}</code> · 30 日 <code>+{{ it.stars_30d }}</code>
+          · 加速度 <code>{{ '%.2f'|format(it.accel) }}x</code> · 建库 <code>{{ it.age_days }}</code> 天
+          · {{ it.language or '语言未知' }}
+          {% if it.subtrack %} · 赛道 <code>{{ it.subtrack }}</code>{% endif %}
+        </div>
+        <div class="meta">信号：{{ it.sources[:4]|join(' · ') or '—' }}{% if it.external_desc %} · {{ it.external_desc }}{% endif %}</div>
+        {% if it.flags %}<div class="flags">⚠ {{ it.flags|join(' / ') }}{% if it.reasons %} — {{ it.reasons|join('；') }}{% endif %}</div>{% endif %}
+      </div>
+      <div class="score">
+        <b>{{ it.score }}</b><span>宝藏分</span>
+        {% if it.spark %}{{ spark(it.spark) }}{% endif %}
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+  {% endfor %}
+
+  <footer>Treasure Radar · 数据来自 GitHub 官方 API / Trending / Hacker News · 仓库级数据不走 HTML 抓取</footer>
+</div>
+<script>
+  document.querySelectorAll('.tab').forEach(function(t){
+    t.addEventListener('click', function(){
+      document.querySelectorAll('.tab').forEach(x=>x.classList.remove('active'));
+      document.querySelectorAll('.section').forEach(x=>x.classList.remove('active'));
+      t.classList.add('active');
+      var el = document.getElementById(t.dataset.target);
+      if (el) el.classList.add('active');
+    });
+  });
+</script>
+</body>
+</html>

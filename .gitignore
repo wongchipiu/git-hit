@@ -1,0 +1,15 @@
+.venv/
+__pycache__/
+*.pyc
+*.pyo
+
+# 本地私密配置与环境
+config.toml
+.env
+
+# 运行产物（注意：排除目录内容用 /* 才能重新包含 .gitkeep）
+data/
+output/*
+!output/.gitkeep
+logs/
+*.log

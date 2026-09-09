@@ -1,0 +1,244 @@
+# =============================================================================
+# GitHub 宝藏雷达 —— 配置文件模板
+# 使用：复制为 config.toml 后按需修改；密钥一律走 .env / 环境变量，不写在这里。
+# =============================================================================
+
+[general]
+timezone      = "Asia/Shanghai"
+user_agent    = "TreasureRadar/1.0 (personal research; +https://github.com)"
+data_dir      = "data"      # SQLite 主库目录
+output_dir    = "output"    # 日报 / HTML 报告目录
+log_dir       = "logs"
+
+[github]
+token_env     = "GITHUB_TOKEN"   # 从环境变量读取，避免密钥入库
+base_url      = "https://api.github.com"
+api_version   = "2026-03-10"     # star history 端点所需版本
+timeout       = 20
+
+[limits]
+# 官方：core 5000/hr、search 30/min。这里刻意留 1/3 余量，杜绝打满配额。
+core_per_hour      = 3000
+search_per_minute  = 20
+min_interval       = 0.4      # 任意两次请求最小间隔（秒）
+max_sleep_on_limit = 120      # 命中限流时最大等待秒数，超过则本轮跳过、下轮自愈
+max_requests_run   = 300      # 单轮全局请求硬上限（安全阀门）
+enable_etag        = true     # 条件请求，304 不计费
+
+[sources]
+search_enabled       = true
+search_pages         = 2        # 每个 query 最多翻页数（100 条/页）
+created_within_days  = 45       # 新仓库粗筛窗口（天）
+pushed_within_days   = 30       # 活跃度粗筛窗口（天）
+star_history_per_run = 150      # L1 单轮最多核验仓库数
+metadata_per_run      = 40      # 每轮最多补全元数据仓库数（trending/hn 来源）
+deep_profile_per_run = 30       # L2 单轮最多深度画像仓库数（commit/贡献者/作者）
+trending_enabled     = true
+trending_languages   = ["", "python", "typescript", "go", "rust"]
+trending_since       = ["daily", "weekly"]
+hn_enabled           = true
+hn_min_points        = 50
+hn_lookback_days     = 3
+
+[schedule]
+# 长驻调度模式（radar.py scheduler）的节奏；刻意保守，避免大流量。
+# 若你只用 Windows 任务计划每天跑一次 run_daily.py，这一节可忽略。
+search_interval_minutes  = 60     # L0 搜索漏斗
+trending_interval_hours  = 6      # Trending 页（低频，合规友好）
+hn_interval_minutes      = 180    # Hacker News
+star_interval_minutes    = 30     # L1 增速核验
+star_limit_per_round     = 40     # 每轮核验上限
+star_candidate_days      = 2      # stars 作业从库加载候选的窗口（天）
+daily_report_time        = "22:00" # 每日出报告时间
+
+[llm]
+enabled           = true
+provider          = "deepseek"
+base_url          = "https://api.deepseek.com"
+api_key_env       = "DEEPSEEK_API_KEY"
+model             = "deepseek-chat"
+timeout           = 60
+temperature       = 0.3
+max_items_per_day = 60          # L3 每日点评上限
+cache_enabled     = true
+prompt_version    = "v1"
+
+[scoring]
+# 注意：运行 `python radar.py calibrate` 后生成的 data/calibration.json
+# 会自动覆盖下面的 w1~w6 手工值（删除该文件即可回到手工配置）。
+early_ceiling = 5000            # 星数超过此值不再享受「早」加成
+w1_velocity   = 1.6             # log1p(v7)
+w2_zscore     = 0.9             # 领域内标准化增速
+w3_accel      = 1.1             # log1p(accel)
+w4_burst      = 0.8             # log1p(burst)
+w5_quality    = 1.2             # 真实性/质量
+w6_external   = 1.0             # 外部热度（HN/Trending）
+w7_author     = 0.6             # 作者信誉
+penalty_farm      = 1.5         # 刷星嫌疑
+penalty_skin      = 1.2         # 换皮/镜像嫌疑
+penalty_stale     = 0.8         # 停更
+penalty_doconly   = 0.6         # 纯文档/清单类
+early_bonus_max   = 0.6         # 「早」最大加成系数
+tier_explosive    = 85
+tier_high         = 70
+tier_watch        = 55
+
+[report]
+per_channel_limit = 10          # 质量红线：每频道每日 ≤10 条，宁缺毋滥
+order             = ["finance", "ai", "rising", "tech", "security", "tools"]
+embed_sparkline   = true
+keep_days         = 90          # 日报保留天数（更旧的清理）
+
+[delivery]
+git_commit = true               # 决策 2：提交 Git 存档
+git_push   = false              # 绝不推送远端
+commit_prefix = "digest"
+
+[watchlist]
+# 重点关注仓库（跳过阈值、优先点评）
+repos = []
+# 重点关注关键词（命中即加权）
+keywords = []
+
+[exclude]
+# 命中即丢弃（噪声过滤）
+keywords = ["awesome", "interview", "leetcode", "roadmap", "tutorial", "course",
+            "面试", "题库", "教程", "课程", "笔记", "刷题"]
+topics   = ["awesome", "awesome-list", "interview-questions", "books"]
+owners   = []
+
+# =============================================================================
+# 垂直频道（决策 3：6 个频道全开；财经频道细分为 5 个子赛道）
+# query 占位符：{date}=今天-created_within_days，{push_date}=今天-pushed_within_days
+# =============================================================================
+
+[[channels]]
+key   = "rising"
+name  = "新星榜 Rising Stars"
+emoji = "🚀"
+enabled = true
+min_stars = 10
+[[channels.groups]]
+name = "新仓库"
+queries = [
+  "created:>{date} stars:>10",
+  "created:>{date} stars:>3 pushed:>{push_date}",
+]
+
+[[channels]]
+key   = "ai"
+name  = "AI / Agent 前线"
+emoji = "🤖"
+enabled = true
+min_stars = 10
+[[channels.groups]]
+name = "LLM 与 Agent"
+queries = [
+  "topic:llm stars:>20 pushed:>{push_date}",
+  "topic:agent stars:>20 pushed:>{push_date}",
+  "topic:mcp stars:>5 pushed:>{push_date}",
+  "topic:rag stars:>10 pushed:>{push_date}",
+]
+[[channels.groups]]
+name = "中文生态"
+queries = [
+  "大模型 in:name,description stars:>5",
+  "智能体 in:name,description stars:>5",
+  "\"AI Agent\" in:name,description stars:>10",
+]
+
+[[channels]]
+key   = "finance"
+name  = "财经交易 Quant & Trading"
+emoji = "💰"
+enabled = true
+min_stars = 3
+[[channels.groups]]
+name = "量化框架与回测"
+queries = [
+  "topic:quantitative-finance stars:>5 pushed:>{push_date}",
+  "topic:backtesting stars:>5 pushed:>{push_date}",
+  "topic:algorithmic-trading stars:>5 pushed:>{push_date}",
+  "量化 in:name,description stars:>3",
+  "回测 in:name,description stars:>3",
+]
+[[channels.groups]]
+name = "行情与数据源"
+queries = [
+  "topic:stock stars:>5 pushed:>{push_date}",
+  "topic:finance stars:>20 pushed:>{push_date}",
+  "A股 in:name,description stars:>3",
+  "tushare in:name,description stars:>2",
+  "akshare in:name,description stars:>2",
+  "同花顺 in:name,description stars:>2",
+]
+[[channels.groups]]
+name = "前沿投资研究"
+queries = [
+  "topic:investment stars:>5 pushed:>{push_date}",
+  "topic:alternative-data stars:>2",
+  "投研 in:name,description stars:>3",
+  "因子 in:name,description,readme stars:>3",
+  "alpha in:name,description stars:>50 pushed:>{push_date}",
+]
+[[channels.groups]]
+name = "重大订单与交易信号"
+queries = [
+  "龙虎榜 in:name,description,readme",
+  "大宗交易 in:name,description,readme",
+  "订单流 in:name,description,readme",
+  "北向资金 in:name,description,readme",
+  "主力资金 in:name,description,readme",
+  "公告 in:name,description stars:>3 监控",
+]
+[[channels.groups]]
+name = "投研 Agent"
+queries = [
+  "\"research agent\" in:name,description stars:>3",
+  "\"trading agent\" in:name,description stars:>3",
+  "investor agent in:name,description stars:>3",
+  "投研 Agent in:name,description",
+]
+
+[[channels]]
+key   = "tech"
+name  = "科技资讯 Tech Radar"
+emoji = "📰"
+enabled = true
+min_stars = 20
+[[channels.groups]]
+name = "资讯与阅读"
+queries = [
+  "topic:news stars:>20 pushed:>{push_date}",
+  "topic:rss stars:>20 pushed:>{push_date}",
+  "资讯 in:name,description stars:>5",
+]
+
+[[channels]]
+key   = "security"
+name  = "安全 & 逆向"
+emoji = "🛡️"
+enabled = true
+min_stars = 5
+[[channels.groups]]
+name = "安全"
+queries = [
+  "topic:security stars:>20 pushed:>{push_date}",
+  "topic:ctf stars:>5 pushed:>{push_date}",
+  "CVE in:name,description stars:>3",
+  "逆向 in:name,description stars:>3",
+]
+
+[[channels]]
+key   = "tools"
+name  = "效率工具"
+emoji = "🧰"
+enabled = true
+min_stars = 20
+[[channels.groups]]
+name = "工具"
+queries = [
+  "topic:cli stars:>50 pushed:>{push_date}",
+  "topic:productivity stars:>30 pushed:>{push_date}",
+  "topic:self-hosted stars:>50 pushed:>{push_date}",
+]

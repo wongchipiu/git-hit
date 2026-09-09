@@ -1,549 +1,98 @@
 {
   "date": "2026-09-09",
   "stats": {
-    "candidates": 23,
-    "star_history": 23,
-    "llm_calls": 6
+    "search_queries": 6,
+    "search_hits": 468,
+    "trending_hits": 160,
+    "hn_hits": 0,
+    "star_history": 20,
+    "deep_profile": 3,
+    "skipped": 19,
+    "candidates": 563,
+    "llm_calls": 19
   },
   "sections": {
-    "finance": [
-      {
-        "full_name": "acme/alpha-quant-lab",
-        "url": "https://github.com/acme/alpha-quant-lab",
-        "score": 100.0,
-        "tier": "explosive",
-        "vertical": "finance",
-        "subtrack": "量化框架与回测",
-        "stars": 780,
-        "stars_7d": 235,
-        "stars_30d": 624,
-        "accel": 1.45260989010989,
-        "language": "Python",
-        "created_at": "2026-08-14",
-        "age_days": 26,
-        "description": "轻量级 A 股量化研究框架：因子挖掘 + 回测 + 订单流复盘，内置 tushare/akshare 数据源。",
-        "topics": [
-          "quantitative-finance",
-          "backtesting",
-          "alpha"
-        ],
-        "sources": [
-          "db"
-        ],
-        "external": "",
-        "flags": [],
-        "reasons": [],
-        "spark": [
-          21,
-          22,
-          21,
-          23,
-          21,
-          22,
-          21,
-          21,
-          22,
-          21,
-          23,
-          21,
-          22,
-          21,
-          21,
-          22,
-          21,
-          23,
-          21,
-          22,
-          21,
-          62,
-          57,
-          52,
-          0
-        ],
-        "llm": {
-          "highlight": "轻量级A股量化研究框架，集成因子挖掘、回测与订单流复盘。",
-          "why_now": "A股量化工具需求持续增长，项目提供轻量级一体化方案，近期星数增长快，社区关注度高。",
-          "risk": "项目创建仅26天，功能稳定性与文档完善度待验证。",
-          "similar": "qlib",
-          "verdict": "watch"
-        }
-      },
-      {
-        "full_name": "Fincept-Corporation/FinceptTerminal",
-        "url": "https://github.com/Fincept-Corporation/FinceptTerminal",
-        "score": 100.0,
-        "tier": "explosive",
-        "vertical": "finance",
-        "subtrack": "量化框架与回测",
-        "stars": 31249,
-        "stars_7d": 359,
-        "stars_30d": 1261,
-        "accel": 1.2201200860994676,
-        "language": "C++",
-        "created_at": "2024-08-29",
-        "age_days": 741,
-        "description": "FinceptTerminal is a modern finance application offering advanced market analytics, investment research, and economic data tools, designed for interactive exploration and data-driven decision-making in a user-friendly environment.",
-        "topics": [
-          "ai-agents",
-          "algorithmic-trading",
-          "bloomberg-terminal",
-          "cpp",
-          "finance",
-          "financial-markets",
-          "fintech",
-          "good-first-issue",
-          "investment",
-          "investment-research",
-          "machine-learning",
-          "opensource",
-          "python",
-          "qt",
-          "quantitative-finance",
-          "stock-market",
-          "trading"
-        ],
-        "sources": [
-          "db"
-        ],
-        "external": "",
-        "flags": [
-          "star_farm_suspect"
-        ],
-        "reasons": [
-          "7 日新增 359 星，但 30 天 commit=0、贡献者≤1"
-        ],
-        "spark": [
-          31,
-          48,
-          38,
-          48,
-          45,
-          41,
-          31,
-          30,
-          30,
-          43,
-          25,
-          48,
-          66,
-          55,
-          46,
-          39,
-          31,
-          37,
-          49,
-          44,
-          28,
-          27,
-          22,
-          34,
-          25,
-          84,
-          100,
-          68,
-          34,
-          14
-        ],
-        "llm": {
-          "highlight": "开源版彭博终端，C++/Qt 构建，集成 AI 与量化工具。",
-          "why_now": "金融数据终端需求高，开源替代稀缺，项目增长快且功能全面。",
-          "risk": "项目规模大，开发周期长，可能依赖外部数据源，存在法律风险。",
-          "similar": "OpenBB Terminal",
-          "verdict": "watch"
-        }
-      },
-      {
-        "full_name": "microsoft/qlib",
-        "url": "https://github.com/microsoft/qlib",
-        "score": 83.23,
-        "tier": "high",
-        "vertical": "finance",
-        "subtrack": "量化框架与回测",
-        "stars": 48438,
-        "stars_7d": 232,
-        "stars_30d": 1251,
-        "accel": 0.7947927372387804,
-        "language": "Python",
-        "created_at": "2020-08-14",
-        "age_days": 2217,
-        "description": "Qlib is an AI-oriented Quant investment platform that aims to use AI tech to empower Quant Research, from exploring ideas to implementing productions. Qlib supports diverse ML modeling paradigms, including supervised learning, market dynamics modeling, and RL, and is now equipped with https://github.com/microsoft/RD-Agent to automate R&D process.",
-        "topics": [
-          "algorithmic-trading",
-          "auto-quant",
-          "deep-learning",
-          "finance",
-          "fintech",
-          "investment",
-          "machine-learning",
-          "paper",
-          "platform",
-          "python",
-          "quant",
-          "quant-dataset",
-          "quant-models",
-          "quantitative-finance",
-          "quantitative-trading",
-          "research",
-          "research-paper",
-          "stock-data"
-        ],
-        "sources": [
-          "db"
-        ],
-        "external": "",
-        "flags": [
-          "star_farm_suspect"
-        ],
-        "reasons": [
-          "7 日新增 232 星，但 30 天 commit=0、贡献者≤1"
-        ],
-        "spark": [
-          45,
-          41,
-          32,
-          41,
-          38,
-          150,
-          82,
-          63,
-          39,
-          31,
-          25,
-          29,
-          34,
-          32,
-          30,
-          31,
-          33,
-          30,
-          59,
-          57,
-          41,
-          30,
-          26,
-          49,
-          29,
-          37,
-          34,
-          36,
-          36,
-          11
-        ],
-        "llm": {
-          "highlight": "微软开源AI量化投资平台，覆盖研究到生产全流程。",
-          "why_now": "量化与AI结合持续热门，Qlib持续更新且社区活跃，近期星数增长显著。",
-          "risk": "项目复杂度高，上手门槛较高，且量化策略有效性受市场变化影响。",
-          "similar": "vn.py",
-          "verdict": "watch"
-        }
-      },
-      {
-        "full_name": "hummingbot/hummingbot",
-        "url": "https://github.com/hummingbot/hummingbot",
-        "score": 81.31,
-        "tier": "high",
-        "vertical": "finance",
-        "subtrack": "量化框架与回测",
-        "stars": 19937,
-        "stars_7d": 173,
-        "stars_30d": 581,
-        "accel": 1.2761249077944432,
-        "language": "Python",
-        "created_at": "2019-04-02",
-        "age_days": 2717,
-        "description": "Open source software that helps you create and deploy high-frequency crypto trading bots",
-        "topics": [
-          "ai-agents",
-          "algotrading",
-          "arbitrage",
-          "backtesting",
-          "binance",
-          "bitcoin",
-          "crypto",
-          "cryptocurrency",
-          "defi",
-          "ethereum",
-          "hft",
-          "hyperliquid",
-          "market-making",
-          "orderbook",
-          "python",
-          "quantitative-finance",
-          "solana",
-          "trading",
-          "trading-stategy"
-        ],
-        "sources": [
-          "db"
-        ],
-        "external": "",
-        "flags": [
-          "star_farm_suspect"
-        ],
-        "reasons": [
-          "7 日新增 173 星，但 30 天 commit=0、贡献者≤1"
-        ],
-        "spark": [
-          18,
-          23,
-          20,
-          14,
-          8,
-          13,
-          15,
-          5,
-          18,
-          7,
-          16,
-          27,
-          16,
-          15,
-          16,
-          26,
-          41,
-          19,
-          13,
-          13,
-          24,
-          25,
-          16,
-          16,
-          28,
-          44,
-          35,
-          23,
-          16,
-          11
-        ],
-        "llm": {
-          "highlight": "开源高频加密交易机器人框架，支持多交易所与策略。",
-          "why_now": "AI代理与加密交易结合趋势下，Hummingbot持续更新，社区活跃，适合量化交易开发者。",
-          "risk": "加密市场波动大，监管风险高，项目复杂度高。",
-          "similar": "Freqtrade",
-          "verdict": "watch"
-        }
-      },
-      {
-        "full_name": "stefan-jansen/machine-learning-for-trading",
-        "url": "https://github.com/stefan-jansen/machine-learning-for-trading",
-        "score": 72.21,
-        "tier": "high",
-        "vertical": "finance",
-        "subtrack": "量化框架与回测",
-        "stars": 20853,
-        "stars_7d": 95,
-        "stars_30d": 501,
-        "accel": 0.8126603934987169,
-        "language": "Jupyter Notebook",
-        "created_at": "2018-05-09",
-        "age_days": 3045,
-        "description": "Code for Machine Learning for Trading, 3rd edition — from data sourcing to live execution.",
-        "topics": [
-          "algorithmic-trading",
-          "artificial-intelligence",
-          "backtesting",
-          "data-science",
-          "deep-learning",
-          "finance",
-          "investment",
-          "investment-strategies",
-          "large-language-models",
-          "machine-learning",
-          "ml4t-workflow",
-          "polars",
-          "quantitative-finance",
-          "reinforcement-learning",
-          "synthetic-data",
-          "trading",
-          "trading-agent",
-          "trading-strategies"
-        ],
-        "sources": [
-          "db"
-        ],
-        "external": "",
-        "flags": [],
-        "reasons": [],
-        "spark": [
-          14,
-          23,
-          7,
-          10,
-          19,
-          19,
-          14,
-          17,
-          26,
-          26,
-          13,
-          13,
-          18,
-          35,
-          16,
-          33,
-          23,
-          14,
-          20,
-          14,
-          8,
-          8,
-          16,
-          11,
-          7,
-          14,
-          16,
-          22,
-          18,
-          7
-        ],
-        "llm": {
-          "highlight": "ML for Trading 第三版配套代码，覆盖数据到实盘全流程。",
-          "why_now": "持续更新，新增 LLM、Polars 等热点，社区活跃，适合量化学习与实践。",
-          "risk": "代码量大，依赖多，需自行配置数据源，上手门槛较高。",
-          "similar": "QuantConnect/Lean",
-          "verdict": "watch"
-        }
-      }
-    ],
+    "finance": [],
     "ai": [
       {
-        "full_name": "beta-ai/agent-harness",
-        "url": "https://github.com/beta-ai/agent-harness",
+        "full_name": "guillaumemeyer/watermarks-remover",
+        "url": "https://github.com/guillaumemeyer/watermarks-remover",
         "score": 100.0,
         "tier": "explosive",
         "vertical": "ai",
         "subtrack": "",
-        "stars": 320,
-        "stars_7d": 85,
-        "stars_30d": 137,
-        "accel": 1.1522419186652764,
-        "language": "TypeScript",
-        "created_at": "2026-08-28",
-        "age_days": 12,
-        "description": "Minimal agent runtime with MCP tool routing and streaming traces.",
-        "topics": [
-          "agent",
-          "llm",
-          "mcp"
-        ],
-        "sources": [
-          "db"
-        ],
-        "external": "",
-        "flags": [],
-        "reasons": [],
-        "spark": [
-          8,
-          9,
-          8,
-          10,
-          8,
-          9,
-          8,
-          8,
-          9,
-          8,
-          10,
-          8,
-          9,
-          8,
-          8,
-          9,
-          8,
-          10,
-          8,
-          9,
-          8,
-          25,
-          20,
-          15,
-          0
-        ],
-        "llm": {
-          "highlight": "极简 agent 运行时，内置 MCP 工具路由与流式追踪。",
-          "why_now": "MCP 生态爆发，极简运行时契合轻量集成需求，增速快，早期值得关注。",
-          "risk": "项目极早期，API 与稳定性未验证，可能被大厂方案覆盖。",
-          "similar": "LangChain",
-          "verdict": "watch"
-        }
-      },
-      {
-        "full_name": "NousResearch/hermes-agent",
-        "url": "https://github.com/NousResearch/hermes-agent",
-        "score": 100.0,
-        "tier": "explosive",
-        "vertical": "ai",
-        "subtrack": "",
-        "stars": 243734,
-        "stars_7d": 3635,
-        "stars_30d": 16221,
-        "accel": 0.960395254828397,
+        "stars": 21506,
+        "stars_7d": 1404,
+        "stars_30d": 21507,
+        "accel": 0.27977601976765043,
         "language": "Python",
-        "created_at": "2025-07-22",
-        "age_days": 414,
-        "description": "The agent that grows with you",
+        "created_at": "2026-08-11",
+        "age_days": 29,
+        "description": "A privacy-first app that strips AI watermarks from content you own.",
         "topics": [
+          "agent-skill",
           "ai",
-          "ai-agent",
-          "ai-agents",
           "anthropic",
+          "c2pa",
           "chatgpt",
           "claude",
-          "claude-code",
-          "codex",
-          "hermes",
-          "hermes-agent",
-          "llm",
-          "nous-research",
-          "openai"
+          "gemini",
+          "openai",
+          "provenance",
+          "synthid",
+          "watermark",
+          "watermark-detection",
+          "watermark-tools",
+          "watermarking",
+          "watermarks"
         ],
         "sources": [
-          "db"
+          "search:created:>{date} stars:>10"
         ],
         "external": "",
         "flags": [
           "star_farm_suspect"
         ],
         "reasons": [
-          "7 日新增 3635 星，但 30 天 commit=0、贡献者≤1"
+          "7 日新增 1404 星，但 30 天 commit=0、贡献者≤1"
         ],
         "spark": [
-          612,
-          552,
-          592,
-          539,
-          450,
-          535,
-          571,
-          577,
-          540,
-          515,
-          461,
-          416,
-          782,
-          836,
-          564,
-          515,
-          449,
-          416,
-          409,
-          434,
-          583,
-          515,
-          723,
-          735,
-          626,
-          512,
-          614,
-          505,
-          451,
-          192
+          45,
+          3051,
+          2798,
+          2695,
+          1366,
+          2210,
+          1524,
+          916,
+          785,
+          718,
+          527,
+          430,
+          437,
+          443,
+          323,
+          263,
+          291,
+          227,
+          191,
+          252,
+          192,
+          200,
+          219,
+          258,
+          260,
+          210,
+          231,
+          223,
+          157,
+          65
         ],
         "llm": {
-          "highlight": "Nous Research 推出的自适应成长型 AI 代理，强调个性化长期演进。",
-          "why_now": "AI 代理赛道火热，Nous 实验室背景与高星数显示社区高度期待，值得跟踪。",
-          "risk": "仓库创建时间与星数增长异常，需警惕数据造假或炒作。",
-          "similar": "AutoGPT",
+          "highlight": "隐私优先的AI水印去除工具，29天暴涨2.1万星。",
+          "why_now": "AI生成内容激增，水印与反水印成为热点，工具满足用户对内容自主控制的需求。",
+          "risk": "法律与伦理风险，可能被滥用去除他人版权水印。",
+          "similar": "无",
           "verdict": "watch"
         }
       },
@@ -554,10 +103,10 @@
         "tier": "explosive",
         "vertical": "ai",
         "subtrack": "",
-        "stars": 254887,
-        "stars_7d": 8675,
-        "stars_30d": 16684,
-        "accel": 2.228396753091071,
+        "stars": 254891,
+        "stars_7d": 8683,
+        "stars_30d": 16692,
+        "accel": 2.2293827667659443,
         "language": "JavaScript",
         "created_at": "2026-01-18",
         "age_days": 234,
@@ -573,14 +122,16 @@
           "productivity"
         ],
         "sources": [
-          "db"
+          "search:topic:llm stars:>20 pushed:>{push_date}",
+          "trending:daily",
+          "trending:weekly"
         ],
-        "external": "",
+        "external": "Trending 第 13 位（+1151） · Trending 第 2 位（+8527）",
         "flags": [
-          "star_farm_suspect"
+          "star_commit_imbalance"
         ],
         "reasons": [
-          "7 日新增 8675 星，但 30 天 commit=0、贡献者≤1"
+          "星/commit 比 2549，远超正常区间"
         ],
         "spark": [
           257,
@@ -612,13 +163,177 @@
           1710,
           1440,
           1393,
-          338
+          346
         ],
         "llm": {
-          "highlight": "为 AI 编程助手打造的性能优化系统，支持多平台。",
-          "why_now": "AI 编程助手爆发期，开发者亟需提升 agent 效率的工具，增长迅猛。",
-          "risk": "仓库极新且星数异常高，需警惕刷星或炒作。",
+          "highlight": "为 AI 编程代理提供性能优化系统，支持多工具与安全研究优先开发。",
+          "why_now": "AI 编程代理工具爆发，性能优化需求凸显，且仓库增长极快，反映市场热度。",
+          "risk": "创建时间短，星数异常高，需警惕刷星或营销炒作。",
           "similar": "Claude Code",
+          "verdict": "watch"
+        }
+      },
+      {
+        "full_name": "NousResearch/hermes-agent",
+        "url": "https://github.com/NousResearch/hermes-agent",
+        "score": 100.0,
+        "tier": "explosive",
+        "vertical": "ai",
+        "subtrack": "",
+        "stars": 243738,
+        "stars_7d": 3640,
+        "stars_30d": 16226,
+        "accel": 0.9614199433008751,
+        "language": "Python",
+        "created_at": "2025-07-22",
+        "age_days": 414,
+        "description": "The agent that grows with you",
+        "topics": [
+          "ai",
+          "ai-agent",
+          "ai-agents",
+          "anthropic",
+          "chatgpt",
+          "claude",
+          "claude-code",
+          "codex",
+          "hermes",
+          "hermes-agent",
+          "llm",
+          "nous-research",
+          "openai"
+        ],
+        "sources": [
+          "search:topic:llm stars:>20 pushed:>{push_date}",
+          "trending:weekly"
+        ],
+        "external": "Trending 第 7 位（+4221） · Trending 第 2 位（+4221）",
+        "flags": [
+          "star_commit_imbalance"
+        ],
+        "reasons": [
+          "星/commit 比 2437，远超正常区间"
+        ],
+        "spark": [
+          612,
+          552,
+          592,
+          539,
+          450,
+          535,
+          571,
+          577,
+          540,
+          515,
+          461,
+          416,
+          782,
+          836,
+          564,
+          515,
+          449,
+          416,
+          409,
+          434,
+          583,
+          515,
+          723,
+          735,
+          626,
+          512,
+          614,
+          505,
+          451,
+          197
+        ],
+        "llm": {
+          "highlight": "NousResearch 推出的自适应成长型 AI 代理框架，强调随用户需求演进。",
+          "why_now": "AI 代理赛道火热，NousResearch 有声誉，新仓库短期星数激增，显示社区高度关注。",
+          "risk": "仓库创建时间与星数存疑，可能为虚假或迁移数据，需验证真实性。",
+          "similar": "AutoGPT",
+          "verdict": "watch"
+        }
+      },
+      {
+        "full_name": "ollama/ollama",
+        "url": "https://github.com/ollama/ollama",
+        "score": 100.0,
+        "tier": "explosive",
+        "vertical": "ai",
+        "subtrack": "",
+        "stars": 180516,
+        "stars_7d": 608,
+        "stars_30d": 2806,
+        "accel": 0.9286223398839223,
+        "language": "Go",
+        "created_at": "2023-06-26",
+        "age_days": 1171,
+        "description": "Get up and running with Kimi-K2.6, GLM-5.2, MiniMax, DeepSeek, gpt-oss, Qwen, Gemma and other models.",
+        "topics": [
+          "deepseek",
+          "gemma",
+          "gemma3",
+          "glm",
+          "go",
+          "golang",
+          "gpt-oss",
+          "llama",
+          "llama3",
+          "llm",
+          "llms",
+          "minimax",
+          "mistral",
+          "ollama",
+          "qwen"
+        ],
+        "sources": [
+          "search:topic:llm stars:>20 pushed:>{push_date}",
+          "trending:weekly"
+        ],
+        "external": "Trending 第 2 位（+677）",
+        "flags": [
+          "star_farm_suspect"
+        ],
+        "reasons": [
+          "7 日新增 608 星，但 30 天 commit=0、贡献者≤1"
+        ],
+        "spark": [
+          79,
+          101,
+          116,
+          94,
+          128,
+          139,
+          125,
+          99,
+          97,
+          96,
+          85,
+          91,
+          81,
+          77,
+          90,
+          100,
+          86,
+          91,
+          96,
+          67,
+          72,
+          90,
+          98,
+          99,
+          92,
+          96,
+          97,
+          121,
+          72,
+          31
+        ],
+        "llm": {
+          "highlight": "本地一键运行主流大模型的开源标准工具，生态地位稳固。",
+          "why_now": "持续集成最新模型（Kimi、GLM、DeepSeek等），近30天星增2800，社区活跃，是本地LLM基础设施首选。",
+          "risk": "依赖模型生态，自身技术壁垒不高，面临Docker等大厂竞争。",
+          "similar": "LM Studio",
           "verdict": "watch"
         }
       },
@@ -648,7 +363,7 @@
           "webhook"
         ],
         "sources": [
-          "db"
+          "search:topic:news stars:>20 pushed:>{push_date}"
         ],
         "external": "",
         "flags": [
@@ -690,106 +405,111 @@
           9
         ],
         "llm": {
-          "highlight": "AI 驱动的双语新闻雷达，每日自动生成简报。",
-          "why_now": "信息过载时代，个性化 AI 新闻聚合需求增长，项目增长快且支持 MCP/飞书集成。",
-          "risk": "创建仅 201 天，功能与成熟竞品差异待验证。",
+          "highlight": "AI 驱动的双语新闻雷达，支持飞书机器人和 MCP 协议。",
+          "why_now": "AI 新闻聚合需求增长，项目增长快且提供中英双语简报，契合信息获取个性化趋势。",
+          "risk": "创建仅 201 天，生态和稳定性待验证；依赖外部 API 可能产生成本。",
           "similar": "无",
           "verdict": "watch"
         }
       },
       {
-        "full_name": "guillaumemeyer/watermarks-remover",
-        "url": "https://github.com/guillaumemeyer/watermarks-remover",
+        "full_name": "usestrix/strix",
+        "url": "https://github.com/usestrix/strix",
         "score": 100.0,
         "tier": "explosive",
         "vertical": "ai",
         "subtrack": "",
-        "stars": 21506,
-        "stars_7d": 1402,
-        "stars_30d": 21506,
-        "accel": 0.27939046910496734,
+        "stars": 61500,
+        "stars_7d": 1334,
+        "stars_30d": 10858,
+        "accel": 0.5265373786280031,
         "language": "Python",
-        "created_at": "2026-08-11",
-        "age_days": 29,
-        "description": "A privacy-first app that strips AI watermarks from content you own.",
+        "created_at": "2025-08-05",
+        "age_days": 400,
+        "description": "Open-source AI penetration testing tool to find and fix your app’s vulnerabilities.",
         "topics": [
-          "agent-skill",
-          "ai",
-          "anthropic",
-          "c2pa",
-          "chatgpt",
-          "claude",
-          "gemini",
-          "openai",
-          "provenance",
-          "synthid",
-          "watermark",
-          "watermark-detection",
-          "watermark-tools",
-          "watermarking",
-          "watermarks"
+          "agents",
+          "ai-hacking",
+          "ai-penetration-testing",
+          "ai-pentesting",
+          "ai-security",
+          "artificial-intelligence",
+          "bug-bounty",
+          "code-quality",
+          "ctf-tools",
+          "cybersecurity",
+          "cybersecurity-tools",
+          "ethical-hacking",
+          "hacking",
+          "llm-security",
+          "offensive-security",
+          "penetration-testing",
+          "pentesting-tools",
+          "red-teaming",
+          "security",
+          "security-automation"
         ],
         "sources": [
-          "db"
+          "search:topic:security stars:>20 pushed:>{push_date}"
         ],
         "external": "",
         "flags": [
           "star_farm_suspect"
         ],
         "reasons": [
-          "7 日新增 1402 星，但 30 天 commit=0、贡献者≤1"
+          "7 日新增 1334 星，但 30 天 commit=0、贡献者≤1"
         ],
         "spark": [
-          45,
-          3051,
-          2798,
-          2695,
-          1366,
-          2210,
-          1524,
-          916,
-          785,
-          718,
-          528,
-          430,
-          437,
-          443,
-          323,
-          263,
-          291,
+          413,
+          337,
+          289,
+          288,
+          661,
+          638,
+          1081,
+          719,
+          588,
+          512,
+          490,
+          360,
+          347,
+          361,
+          435,
+          363,
+          288,
           227,
-          191,
-          252,
-          192,
-          200,
-          219,
-          258,
-          260,
           210,
-          231,
-          223,
-          157,
-          63
+          222,
+          222,
+          244,
+          229,
+          220,
+          182,
+          182,
+          215,
+          182,
+          254,
+          99
         ],
         "llm": {
-          "highlight": "隐私优先的AI水印去除工具，29天星数破2万，增长迅猛。",
-          "why_now": "AI生成内容激增，水印与反水印成为热点，项目切中创作者对内容所有权和隐私的需求。",
-          "risk": "法律和伦理风险，去除水印可能被滥用，且技术对抗持续升级。",
-          "similar": "无",
+          "highlight": "开源AI渗透测试工具，自动发现并修复应用漏洞。",
+          "why_now": "AI安全需求激增，工具契合红队与漏洞赏金趋势，星数增速快。",
+          "risk": "项目较新，功能成熟度与社区生态待验证。",
+          "similar": "Nuclei",
           "verdict": "watch"
         }
       },
       {
         "full_name": "n8n-io/n8n",
         "url": "https://github.com/n8n-io/n8n",
-        "score": 93.6,
+        "score": 93.64,
         "tier": "explosive",
         "vertical": "ai",
         "subtrack": "",
-        "stars": 203846,
-        "stars_7d": 795,
-        "stars_30d": 4330,
-        "accel": 0.7868690201253711,
+        "stars": 203847,
+        "stars_7d": 797,
+        "stars_30d": 4332,
+        "accel": 0.7884843688167787,
         "language": "TypeScript",
         "created_at": "2019-06-22",
         "age_days": 2636,
@@ -817,14 +537,14 @@
           "workflow-automation"
         ],
         "sources": [
-          "db"
+          "search:topic:cli stars:>50 pushed:>{push_date}"
         ],
         "external": "",
         "flags": [
           "star_farm_suspect"
         ],
         "reasons": [
-          "7 日新增 795 星，但 30 天 commit=0、贡献者≤1"
+          "7 日新增 797 星，但 30 天 commit=0、贡献者≤1"
         ],
         "spark": [
           156,
@@ -856,102 +576,20 @@
           110,
           122,
           131,
-          58
+          60
         ],
         "llm": {
-          "highlight": "开源工作流自动化平台，原生AI能力与400+集成，支持自托管。",
-          "why_now": "AI自动化需求激增，n8n持续迭代，近30天增星4330，社区活跃，MCP支持紧跟趋势。",
-          "risk": "fair-code许可非纯开源，商业竞争激烈，功能复杂度可能提升使用门槛。",
+          "highlight": "开源工作流自动化平台，原生AI能力，400+集成，支持自托管。",
+          "why_now": "AI工作流需求爆发，n8n作为低代码平台结合AI能力，增长迅猛，社区活跃。",
+          "risk": "fair-code许可非纯开源，可能限制商业使用；竞争激烈。",
           "similar": "Zapier",
-          "verdict": "recommend"
-        }
-      },
-      {
-        "full_name": "ollama/ollama",
-        "url": "https://github.com/ollama/ollama",
-        "score": 86.37,
-        "tier": "explosive",
-        "vertical": "ai",
-        "subtrack": "",
-        "stars": 180513,
-        "stars_7d": 604,
-        "stars_30d": 2803,
-        "accel": 0.9235003312777127,
-        "language": "Go",
-        "created_at": "2023-06-26",
-        "age_days": 1171,
-        "description": "Get up and running with Kimi-K2.6, GLM-5.2, MiniMax, DeepSeek, gpt-oss, Qwen, Gemma and other models.",
-        "topics": [
-          "deepseek",
-          "gemma",
-          "gemma3",
-          "glm",
-          "go",
-          "golang",
-          "gpt-oss",
-          "llama",
-          "llama3",
-          "llm",
-          "llms",
-          "minimax",
-          "mistral",
-          "ollama",
-          "qwen"
-        ],
-        "sources": [
-          "db"
-        ],
-        "external": "",
-        "flags": [
-          "star_farm_suspect"
-        ],
-        "reasons": [
-          "7 日新增 604 星，但 30 天 commit=0、贡献者≤1"
-        ],
-        "spark": [
-          79,
-          101,
-          116,
-          94,
-          128,
-          139,
-          125,
-          99,
-          97,
-          96,
-          85,
-          91,
-          81,
-          77,
-          90,
-          101,
-          86,
-          91,
-          96,
-          67,
-          72,
-          90,
-          98,
-          99,
-          92,
-          96,
-          97,
-          121,
-          72,
-          27
-        ],
-        "llm": {
-          "highlight": "本地运行大模型的极简工具，支持主流开源模型，生态成熟。",
-          "why_now": "AI 应用爆发，本地化部署需求增长，Ollama 持续更新模型支持，社区活跃。",
-          "risk": "模型迭代快，需持续跟进；与云服务竞争，长期定位可能受冲击。",
-          "similar": "llama.cpp",
           "verdict": "recommend"
         }
       },
       {
         "full_name": "koala73/worldmonitor",
         "url": "https://github.com/koala73/worldmonitor",
-        "score": 75.0,
+        "score": 70.51,
         "tier": "high",
         "vertical": "ai",
         "subtrack": "",
@@ -978,7 +616,7 @@
           "situation"
         ],
         "sources": [
-          "db"
+          "search:topic:news stars:>20 pushed:>{push_date}"
         ],
         "external": "",
         "flags": [
@@ -1020,9 +658,9 @@
           32
         ],
         "llm": {
-          "highlight": "AI驱动的实时全球情报仪表盘，整合新闻、地缘政治与基础设施监控。",
-          "why_now": "地缘政治风险升温，OSINT与AI结合需求增长，项目增长迅猛且具MCP生态潜力。",
-          "risk": "数据源合规与准确性存疑，且高星数可能含水分或炒作。",
+          "highlight": "AI 驱动的实时全球态势感知开源面板，整合新闻与地缘政治监控。",
+          "why_now": "地缘政治风险升温，OSINT 与 AI 结合需求增长，项目增长迅猛且自带 MCP 生态。",
+          "risk": "新项目，数据源合规与准确性存疑，需验证长期维护。",
           "similar": "Palantir Foundry",
           "verdict": "watch"
         }
@@ -1030,7 +668,7 @@
       {
         "full_name": "Significant-Gravitas/AutoGPT",
         "url": "https://github.com/Significant-Gravitas/AutoGPT",
-        "score": 62.29,
+        "score": 62.28,
         "tier": "watch",
         "vertical": "ai",
         "subtrack": "",
@@ -1056,7 +694,7 @@
           "python"
         ],
         "sources": [
-          "db"
+          "search:topic:llm stars:>20 pushed:>{push_date}"
         ],
         "external": "",
         "flags": [
@@ -1098,87 +736,26 @@
           15
         ],
         "llm": {
-          "highlight": "AutoGPT 是早期自主智能体项目，现转向低代码 AI 应用构建平台。",
-          "why_now": "AI 智能体赛道持续火热，AutoGPT 迭代活跃，平台化转型可能带来新生态。",
-          "risk": "项目方向多次调整，定位模糊，竞争激烈，社区热度下降。",
-          "similar": "LangChain",
+          "highlight": "AutoGPT 旨在让 AI 智能体人人可用，提供构建自主代理的工具。",
+          "why_now": "AI 智能体赛道持续火热，AutoGPT 作为早期明星项目，近期更新活跃，仍具参考价值。",
+          "risk": "项目定位多次调整，核心价值模糊，竞争激烈。",
+          "similar": "AgentGPT",
           "verdict": "watch"
         }
       }
     ],
     "rising": [
       {
-        "full_name": "sec-lab/cve-playground",
-        "url": "https://github.com/sec-lab/cve-playground",
-        "score": 100.0,
-        "tier": "explosive",
-        "vertical": "security",
-        "subtrack": "",
-        "stars": 150,
-        "stars_7d": 34,
-        "stars_30d": 117,
-        "accel": 1.2454212454212454,
-        "language": "C",
-        "created_at": "2026-07-31",
-        "age_days": 40,
-        "description": "CVE 复现环境与利用链合集，含中文分析报告。",
-        "topics": [
-          "security",
-          "cve",
-          "ctf"
-        ],
-        "sources": [
-          "db"
-        ],
-        "external": "",
-        "flags": [],
-        "reasons": [],
-        "spark": [
-          4,
-          5,
-          4,
-          6,
-          4,
-          5,
-          4,
-          4,
-          5,
-          4,
-          6,
-          4,
-          5,
-          4,
-          4,
-          5,
-          4,
-          6,
-          4,
-          5,
-          4,
-          12,
-          7,
-          2,
-          0
-        ],
-        "llm": {
-          "highlight": "CVE 复现环境与利用链合集，含中文分析，适合安全学习。",
-          "why_now": "CVE 复现需求高，仓库增长快，中文内容稀缺，近期热度上升明显。",
-          "risk": "项目新，内容质量与维护持续性待验证，可能涉及敏感利用代码。",
-          "similar": "vulhub",
-          "verdict": "watch"
-        }
-      },
-      {
         "full_name": "deepseek-ai/deepseek-harness",
         "url": "https://github.com/deepseek-ai/deepseek-harness",
-        "score": 84.63,
-        "tier": "high",
+        "score": 100.0,
+        "tier": "explosive",
         "vertical": "rising",
         "subtrack": "",
-        "stars": 217255,
-        "stars_7d": 7446,
-        "stars_30d": 217250,
-        "accel": 0.13709551208285387,
+        "stars": 217266,
+        "stars_7d": 7463,
+        "stars_30d": 217267,
+        "accel": 0.1373977640414789,
         "language": "TypeScript",
         "created_at": "2026-08-13",
         "age_days": 27,
@@ -1190,15 +767,11 @@
           "dsh-plugin"
         ],
         "sources": [
-          "db"
+          "search:created:>{date} stars:>10"
         ],
         "external": "",
-        "flags": [
-          "star_farm_suspect"
-        ],
-        "reasons": [
-          "7 日新增 7446 星，但 30 天 commit=0、贡献者≤1"
-        ],
+        "flags": [],
+        "reasons": [],
         "spark": [
           0,
           0,
@@ -1229,21 +802,21 @@
           1089,
           1097,
           1225,
-          622
+          639
         ],
         "llm": {
-          "highlight": "DeepSeek官方插件化Agent框架，宣称万物皆插件。",
-          "why_now": "DeepSeek生态扩展，插件化架构契合AI Agent趋势，发布即获高关注。",
-          "risk": "仓库极新，星数增长异常，需验证真实性与长期维护。",
-          "similar": "LangChain",
+          "highlight": "DeepSeek 官方插件化 AI Agent 框架，宣称万物皆可插件。",
+          "why_now": "DeepSeek 品牌背书，星数爆发式增长，插件化架构契合 AI Agent 生态趋势。",
+          "risk": "创建仅 27 天，代码成熟度与生态待验证，星数可能含水分。",
+          "similar": "Cordis",
           "verdict": "watch"
         }
       },
       {
         "full_name": "anywhere-labs/dsh-desktop",
         "url": "https://github.com/anywhere-labs/dsh-desktop",
-        "score": 76.45,
-        "tier": "high",
+        "score": 92.64,
+        "tier": "explosive",
         "vertical": "rising",
         "subtrack": "",
         "stars": 24778,
@@ -1265,7 +838,7 @@
           "dsh-plugin-desktop"
         ],
         "sources": [
-          "db"
+          "search:created:>{date} stars:>10"
         ],
         "external": "",
         "flags": [
@@ -1307,9 +880,9 @@
           140
         ],
         "llm": {
-          "highlight": "将桌面环境本身插件化的 DeepSeek 生态入口，理念新颖。",
-          "why_now": "DeepSeek 生态热度高，插件化桌面概念稀缺，早期增长迅猛。",
-          "risk": "创建仅 27 天，架构与稳定性未验证，可能为概念炒作。",
+          "highlight": "将桌面本身插件化的 DeepSeek 生态桌面端，理念新颖。",
+          "why_now": "DeepSeek 热度高，插件生态刚起步，桌面端切入时机早，增长迅猛。",
+          "risk": "创建仅 27 天，代码成熟度与长期维护待验证。",
           "similar": "无",
           "verdict": "watch"
         }
@@ -1317,28 +890,28 @@
       {
         "full_name": "firecrawl/anydoc",
         "url": "https://github.com/firecrawl/anydoc",
-        "score": 58.14,
-        "tier": "watch",
+        "score": 70.53,
+        "tier": "high",
         "vertical": "rising",
         "subtrack": "",
-        "stars": 20893,
-        "stars_7d": 796,
-        "stars_30d": 7175,
-        "accel": 0.4754604280736685,
+        "stars": 20895,
+        "stars_7d": 799,
+        "stars_30d": 7178,
+        "accel": 0.47705289973331205,
         "language": "Rust",
         "created_at": "2026-08-03",
         "age_days": 37,
         "description": "Convert Word, PowerPoint, Excel, OpenDocument, RTF, EPUB, CSV, and PDF to clean Markdown. Built in Rust, with Node.js and Python bindings.",
         "topics": [],
         "sources": [
-          "db"
+          "search:created:>{date} stars:>10"
         ],
         "external": "",
         "flags": [
           "star_farm_suspect"
         ],
         "reasons": [
-          "7 日新增 796 星，但 30 天 commit=0、贡献者≤1"
+          "7 日新增 799 星，但 30 天 commit=0、贡献者≤1"
         ],
         "spark": [
           876,
@@ -1370,13 +943,13 @@
           125,
           151,
           107,
-          68
+          71
         ],
         "llm": {
-          "highlight": "用 Rust 将 Office 文档转 Markdown，提供 Node/Python 绑定。",
-          "why_now": "文档转 Markdown 需求稳定，Rust 性能优势明显，且 30 天星增 7k+ 验证了市场兴趣。",
-          "risk": "项目仅 37 天，API 稳定性与格式兼容性待验证。",
-          "similar": "mammoth",
+          "highlight": "Rust 编写的高性能文档转 Markdown 工具，支持多格式，提供多语言绑定。",
+          "why_now": "文档转 Markdown 需求普遍，Rust 性能优势明显，且星数增长迅猛，社区关注度高。",
+          "risk": "项目仅 37 天，成熟度未知，可能 API 不稳定或维护中断。",
+          "similar": "markitdown",
           "verdict": "watch"
         }
       }
@@ -1415,7 +988,7 @@
           "youdao"
         ],
         "sources": [
-          "db"
+          "search:topic:news stars:>20 pushed:>{push_date}"
         ],
         "external": "",
         "flags": [],
@@ -1453,15 +1026,267 @@
           4
         ],
         "llm": {
-          "highlight": "一个聚合多类免费开放 API 的集合，支持多平台部署。",
-          "why_now": "API 聚合需求持续存在，项目维护活跃且星数增长，适合开发者快速集成。",
-          "risk": "依赖第三方数据源，可能受限于来源稳定性与合规性。",
-          "similar": "public-apis",
+          "highlight": "免费开放 API 集合，覆盖热搜、金价、天气等，支持多平台部署。",
+          "why_now": "API 服务需求稳定，项目持续更新且星数增长，提供免费可靠的数据接口，适合开发者集成。",
+          "risk": "免费 API 依赖上游数据源，可能受限于稳定性或政策变化。",
+          "similar": "Public APIs",
           "verdict": "watch"
         }
       }
     ],
-    "security": [],
+    "security": [
+      {
+        "full_name": "caddyserver/caddy",
+        "url": "https://github.com/caddyserver/caddy",
+        "score": 80.92,
+        "tier": "high",
+        "vertical": "security",
+        "subtrack": "",
+        "stars": 75590,
+        "stars_7d": 173,
+        "stars_30d": 873,
+        "accel": 0.8492881688757977,
+        "language": "Go",
+        "created_at": "2015-01-13",
+        "age_days": 4257,
+        "description": "Fast and extensible multi-platform HTTP/1-2-3 web server with automatic HTTPS",
+        "topics": [
+          "acme",
+          "automatic-https",
+          "caddy",
+          "caddyfile",
+          "go",
+          "golang",
+          "http",
+          "http-server",
+          "http3",
+          "https",
+          "privacy",
+          "reverse-proxy",
+          "security",
+          "tls",
+          "web-server"
+        ],
+        "sources": [
+          "search:topic:security stars:>20 pushed:>{push_date}"
+        ],
+        "external": "",
+        "flags": [
+          "star_farm_suspect"
+        ],
+        "reasons": [
+          "7 日新增 173 星，但 30 天 commit=0、贡献者≤1"
+        ],
+        "spark": [
+          35,
+          28,
+          33,
+          33,
+          19,
+          20,
+          33,
+          23,
+          29,
+          28,
+          35,
+          31,
+          35,
+          35,
+          29,
+          35,
+          31,
+          40,
+          28,
+          27,
+          23,
+          36,
+          34,
+          36,
+          30,
+          18,
+          24,
+          30,
+          25,
+          10
+        ],
+        "llm": {
+          "highlight": "自动 HTTPS 的现代 Web 服务器，支持 HTTP/3，配置简单。",
+          "why_now": "HTTP/3 普及与自动 HTTPS 需求增长，Caddy 持续迭代，社区活跃。",
+          "risk": "成熟项目，创新空间有限，但作为基础设施稳定。",
+          "similar": "nginx",
+          "verdict": "watch"
+        }
+      },
+      {
+        "full_name": "swisskyrepo/PayloadsAllTheThings",
+        "url": "https://github.com/swisskyrepo/PayloadsAllTheThings",
+        "score": 75.4,
+        "tier": "high",
+        "vertical": "security",
+        "subtrack": "",
+        "stars": 80750,
+        "stars_7d": 186,
+        "stars_30d": 954,
+        "accel": 0.8355795148247979,
+        "language": "Python",
+        "created_at": "2016-10-18",
+        "age_days": 3613,
+        "description": "A list of useful payloads and bypass for Web Application Security and Pentest/CTF",
+        "topics": [
+          "bounty",
+          "bugbounty",
+          "bypass",
+          "cheatsheet",
+          "enumeration",
+          "hacking",
+          "hacktoberfest",
+          "methodology",
+          "payload",
+          "payloads",
+          "penetration-testing",
+          "pentest",
+          "privilege-escalation",
+          "redteam",
+          "security",
+          "vulnerability",
+          "web-application"
+        ],
+        "sources": [
+          "search:topic:security stars:>20 pushed:>{push_date}"
+        ],
+        "external": "",
+        "flags": [
+          "star_farm_suspect",
+          "doc_only"
+        ],
+        "reasons": [
+          "7 日新增 186 星，但 30 天 commit=0、贡献者≤1",
+          "疑似清单/教程类仓库，非工具型宝藏"
+        ],
+        "spark": [
+          51,
+          41,
+          45,
+          24,
+          28,
+          32,
+          28,
+          37,
+          35,
+          36,
+          48,
+          34,
+          29,
+          29,
+          32,
+          39,
+          37,
+          29,
+          25,
+          31,
+          30,
+          24,
+          24,
+          32,
+          32,
+          28,
+          18,
+          33,
+          30,
+          13
+        ],
+        "llm": {
+          "highlight": "Web 安全与渗透测试的 payload 百科全书，持续更新。",
+          "why_now": "近 30 天增星近千，社区活跃，内容持续更新，是安全从业者常备参考。",
+          "risk": "内容庞杂，需自行甄别与验证，且部分 payload 可能过时。",
+          "similar": "PayloadsAllTheThings",
+          "verdict": "recommend"
+        }
+      },
+      {
+        "full_name": "x64dbg/x64dbg",
+        "url": "https://github.com/x64dbg/x64dbg",
+        "score": 63.12,
+        "tier": "watch",
+        "vertical": "security",
+        "subtrack": "",
+        "stars": 49456,
+        "stars_7d": 82,
+        "stars_30d": 388,
+        "accel": 0.9057437407952871,
+        "language": "C++",
+        "created_at": "2015-04-11",
+        "age_days": 4169,
+        "description": "An open-source user mode debugger for Windows. Optimized for reverse engineering and malware analysis.",
+        "topics": [
+          "binary-analysis",
+          "ctf",
+          "cybersecurity",
+          "debugger",
+          "debugging",
+          "disassembler",
+          "dynamic-analysis",
+          "exploit-development",
+          "hacking",
+          "malware-analysis",
+          "offensive-security",
+          "oscp",
+          "program-analysis",
+          "reverse-engineering",
+          "security",
+          "security-tools",
+          "windows",
+          "x64",
+          "x86",
+          "x86-64"
+        ],
+        "sources": [
+          "search:topic:security stars:>20 pushed:>{push_date}"
+        ],
+        "external": "",
+        "flags": [],
+        "reasons": [],
+        "spark": [
+          16,
+          13,
+          9,
+          6,
+          8,
+          10,
+          10,
+          13,
+          9,
+          11,
+          15,
+          12,
+          27,
+          25,
+          22,
+          11,
+          22,
+          16,
+          14,
+          8,
+          11,
+          9,
+          9,
+          6,
+          14,
+          16,
+          15,
+          10,
+          17,
+          4
+        ],
+        "llm": {
+          "highlight": "Windows 用户态调试器标杆，逆向与恶意分析首选开源工具。",
+          "why_now": "持续维护，社区活跃，功能完善，是逆向工程基础工具，长期值得关注。",
+          "risk": "项目成熟，新功能迭代趋缓，竞争工具如 WinDbg 增强。",
+          "similar": "WinDbg",
+          "verdict": "watch"
+        }
+      }
+    ],
     "tools": [
       {
         "full_name": "yt-dlp/yt-dlp",
@@ -1470,10 +1295,10 @@
         "tier": "explosive",
         "vertical": "tools",
         "subtrack": "",
-        "stars": 189970,
-        "stars_7d": 1433,
-        "stars_30d": 6601,
-        "accel": 0.9303785140779536,
+        "stars": 189971,
+        "stars_7d": 1435,
+        "stars_30d": 6602,
+        "accel": 0.9315358982126628,
         "language": "Python",
         "created_at": "2020-10-26",
         "age_days": 2144,
@@ -1488,14 +1313,14 @@
           "yt-dlp"
         ],
         "sources": [
-          "db"
+          "search:topic:cli stars:>50 pushed:>{push_date}"
         ],
         "external": "",
         "flags": [
           "star_farm_suspect"
         ],
         "reasons": [
-          "7 日新增 1433 星，但 30 天 commit=0、贡献者≤1"
+          "7 日新增 1435 星，但 30 天 commit=0、贡献者≤1"
         ],
         "spark": [
           212,
@@ -1513,7 +1338,7 @@
           221,
           226,
           227,
-          270,
+          269,
           218,
           193,
           193,
@@ -1527,14 +1352,14 @@
           238,
           242,
           186,
-          69
+          71
         ],
         "llm": {
-          "highlight": "功能强大的命令行音视频下载器，youtube-dl 的活跃继任者。",
-          "why_now": "持续高频更新，紧跟平台反爬，社区活跃，是下载工具首选。",
-          "risk": "依赖第三方网站接口，存在法律与稳定性风险。",
+          "highlight": "功能丰富的命令行音视频下载器，youtube-dl 的活跃继任者。",
+          "why_now": "持续高频更新，社区活跃，星数稳定增长，是下载工具领域的常青树。",
+          "risk": "依赖网站反爬策略，存在法律与合规风险。",
           "similar": "youtube-dl",
-          "verdict": "recommend"
+          "verdict": "watch"
         }
       },
       {
@@ -1570,7 +1395,7 @@
           "zsh-configuration"
         ],
         "sources": [
-          "db"
+          "search:topic:cli stars:>50 pushed:>{push_date}"
         ],
         "external": "",
         "flags": [
@@ -1612,9 +1437,9 @@
           11
         ],
         "llm": {
-          "highlight": "社区驱动的 zsh 配置管理框架，含 300+ 插件和 140+ 主题。",
-          "why_now": "作为长期维护的经典项目，持续更新，适合新用户快速配置 zsh 环境。",
-          "risk": "项目成熟，创新空间有限，但无明显风险。",
+          "highlight": "社区驱动的 zsh 配置管理框架，拥有 2500+ 贡献者和 300+ 插件。",
+          "why_now": "持续活跃且增长稳定，是终端效率提升的经典选择，适合新用户和定制需求者。",
+          "risk": "项目成熟，功能趋于稳定，创新空间有限；对 zsh 重度用户可能转向更轻量方案。",
           "similar": "prezto",
           "verdict": "watch"
         }
@@ -1626,7 +1451,7 @@
         "tier": "watch",
         "vertical": "tools",
         "subtrack": "",
-        "stars": 106876,
+        "stars": 106877,
         "stars_7d": 175,
         "stars_30d": 833,
         "accel": 0.9003601440576231,
@@ -1644,7 +1469,7 @@
           "mcp-server"
         ],
         "sources": [
-          "db"
+          "search:topic:cli stars:>50 pushed:>{push_date}"
         ],
         "external": "",
         "flags": [
@@ -1686,10 +1511,10 @@
           9
         ],
         "llm": {
-          "highlight": "Google 官方开源终端 AI Agent，支持 MCP，直连 Gemini。",
-          "why_now": "AI Agent 终端化趋势明确，Google 背书且星数破十万，生态潜力大。",
-          "risk": "依赖 Google 云服务，可能受限于 Gemini API 定价与区域可用性。",
-          "similar": "OpenAI Codex CLI",
+          "highlight": "Google 官方开源终端 AI Agent，集成 Gemini 与 MCP。",
+          "why_now": "AI 编码助手向终端演进，Gemini CLI 依托 Google 生态与 MCP 标准，星数增长快，生态潜力大。",
+          "risk": "与 Claude Code 等竞品同质化，且依赖 Google 云服务，可能受限于 Gemini 模型。",
+          "similar": "Claude Code",
           "verdict": "watch"
         }
       }
